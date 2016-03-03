@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-03T07:24:43.822Z</updated>
+  <updated>2016-03-03T09:03:53.625Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/03/03/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9APC%E9%97%B4%E5%90%8C%E6%AD%A5/"/>
     <id>http://yoursite.com/2016/03/03/Hexo博客多PC间同步/</id>
     <published>2016-03-03T06:18:36.000Z</published>
-    <updated>2016-03-03T07:24:43.822Z</updated>
+    <updated>2016-03-03T09:03:53.625Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;本文的说明均是基于win7 64位环境&lt;/em&gt;  &lt;/p&gt;
 &lt;h4 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h4&gt;&lt;p&gt;由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的&lt;a href=&quot;http://www.zhihu.com/question/21193762/answer/20811453&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;讨论&lt;/a&gt;，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的&lt;a href=&quot;http://git.oschina.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oschina&lt;/a&gt;。&lt;/p&gt;
@@ -29,12 +29,48 @@
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;删除文件夹内原有的&lt;code&gt;.git&lt;/code&gt;缓存文件夹并编辑&lt;code&gt;.gitignore&lt;/code&gt;文件  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Hexoblog文件下所有的&lt;code&gt;.git&lt;/code&gt;缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。&lt;br&gt;(&lt;code&gt;.git&lt;/code&gt; 默认是隐藏文件，需要开启隐藏文件显示，&lt;strong&gt;&lt;code&gt;.git&lt;/code&gt;文件被删除后整个文件对应的原有git仓库状态也会被清空&lt;/strong&gt;)  &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Hexoblog文件下所有的&lt;code&gt;.git&lt;/code&gt;缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。&lt;br&gt;(&lt;code&gt;.git&lt;/code&gt; 默认是隐藏文件，需要开启隐藏文件显示，&lt;strong&gt;&lt;code&gt;.git&lt;/code&gt;文件被删除后整个文件对应的原有git仓库状态也会被清空&lt;/strong&gt;)  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;.gitignore文件作用是声明不被git记录的文件，blog根目录下的.gitignore是hexo初始化带来的，可以先删除或者直接编辑，对hexo不会有影响。建议.gitignore内添加以下内容：&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/.deploy_git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;/public&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;.deploy_git是hexo默认的.git配置文件夹，不需要同步&lt;br&gt;public内文件是根据source文件夹内容自动生成，不需要备份，不然每次改动内容太多&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;初始化仓库&lt;br&gt;blog根目录下执行以下代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add origin &amp;lt;server&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;server&gt;是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端 &lt;/server&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
-&lt;li&gt;&lt;p&gt;sdjfkds&lt;/p&gt;
+&lt;li&gt;&lt;p&gt;添加本地文件到仓库并同步到git上&lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git add .  &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &quot;first commit&quot; &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;添加更新说明&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push -u origin master &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;推送更新到云端服务器&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在执行这步之前一定要注意检查下.gitignore文件的内容，看看是否正确的把一些文件夹忽略掉了。如果加错了的话可以用 &lt;/p&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git rm -r --cached .&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;撤销操作&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;至此，已经将hexo文件部署到了在线仓库。  &lt;/p&gt;
+&lt;h5 id=&quot;将git内容同步到本地&quot;&gt;&lt;a href=&quot;#将git内容同步到本地&quot; class=&quot;headerlink&quot; title=&quot;将git内容同步到本地&quot;&gt;&lt;/a&gt;将git内容同步到本地&lt;/h5&gt;&lt;p&gt;假设之前将A电脑里的内容备份到git了，现在B电脑准备同步内容。&lt;br&gt;在gitbash中运行以下命令&lt;br&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git init&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git remote add origin &amp;lt;server&amp;gt; &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;将本地文件和云端仓库映射起来。这步不可以跳过&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git fetch --all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git reset --hard origin/master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;fetch是将云端所有内容拉取下来。reset则是不做任何合并处理，强制将本地内容指向刚刚同步下来的云端内容（正常pull的话需要考虑不少冲突的问题，比较麻烦。）  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;更新文章后的同步操作&quot;&gt;&lt;a href=&quot;#更新文章后的同步操作&quot; class=&quot;headerlink&quot; title=&quot;更新文章后的同步操作&quot;&gt;&lt;/a&gt;更新文章后的同步操作&lt;/h5&gt;&lt;p&gt;在B电脑上写完了文章，用hexo d发布完了之后，这时候需要将新文章的md文件及新的配置更新更新到云端。&lt;br&gt;在同一个bash界面下运行以下命令：&lt;br&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git add .&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;这时候可以用git status查看状态，一般会显示刚刚更改过的文件状态。如：&lt;br&gt;    &lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;On branch master&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Changes to be committed:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;(use &quot;git reset HEAD &amp;lt;file&amp;gt;...&quot; to unstage)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    modified:   db.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    new file:   source/_posts/test.md&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;上面的输出状态即说明’db.json’文件做了更改，source/_posts目录下新增了’test.md’文件。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;然后对更改添加说明并推送到远程仓库.&lt;br&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &#39;更新信息&#39;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;提示如下，即表示上传同步成功&lt;br&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;To git@git.oschina.net:xxxx/blog-backup.git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt; + 2c77e1e...5616bc6 master -&amp;gt; master (forced update)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;同步到本地就用&lt;br&gt;&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git fetch --all&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git reset --hard origin/master&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;如果不是第一次，不需要进行初始化&lt;/p&gt;
 </content>
     
     <summary type="html">
@@ -50,6 +86,8 @@
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="同步" scheme="http://yoursite.com/tags/%E5%90%8C%E6%AD%A5/"/>
     
   </entry>
   

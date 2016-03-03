@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="hexo,博客," />
+  <meta name="keywords" content="hexo,博客,同步," />
 
 
 
@@ -80,7 +80,7 @@
 <meta property="og:description" content="本文的说明均是基于win7 64位环境  
 需求由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的讨论，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的oschina。
 配置过程此处仅仅是单个git网站部署，如果是多网站部">
-<meta property="og:updated_time" content="2016-03-03T07:24:43.822Z">
+<meta property="og:updated_time" content="2016-03-03T09:03:53.625Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客多PC间同步">
 <meta name="twitter:description" content="本文的说明均是基于win7 64位环境  
@@ -524,12 +524,48 @@
 <ol>
 <li><p>删除文件夹内原有的<code>.git</code>缓存文件夹并编辑<code>.gitignore</code>文件  </p>
 <blockquote>
-<p>Hexoblog文件下所有的<code>.git</code>缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。<br>(<code>.git</code> 默认是隐藏文件，需要开启隐藏文件显示，<strong><code>.git</code>文件被删除后整个文件对应的原有git仓库状态也会被清空</strong>)  </p>
+<ul>
+<li>Hexoblog文件下所有的<code>.git</code>缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。<br>(<code>.git</code> 默认是隐藏文件，需要开启隐藏文件显示，<strong><code>.git</code>文件被删除后整个文件对应的原有git仓库状态也会被清空</strong>)  </li>
+</ul>
+<hr>
+<ul>
+<li>.gitignore文件作用是声明不被git记录的文件，blog根目录下的.gitignore是hexo初始化带来的，可以先删除或者直接编辑，对hexo不会有影响。建议.gitignore内添加以下内容：<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git</span><br><span class="line">/public</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>.deploy_git是hexo默认的.git配置文件夹，不需要同步<br>public内文件是根据source文件夹内容自动生成，不需要备份，不然每次改动内容太多</li>
+</ul>
+</li>
+<li><p>初始化仓库<br>blog根目录下执行以下代码：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &lt;server&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><server>是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端 </server></p>
 </blockquote>
 </li>
-<li><p>sdjfkds</p>
+<li><p>添加本地文件到仓库并同步到git上</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .  <span class="special">#</span>添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)</span><br><span class="line">git commit -m "first commit" <span class="special">#</span>添加更新说明</span><br><span class="line">git push -u origin master <span class="special">#</span>推送更新到云端服务器</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在执行这步之前一定要注意检查下.gitignore文件的内容，看看是否正确的把一些文件夹忽略掉了。如果加错了的话可以用 </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>撤销操作</p>
 </li>
 </ol>
+<p>至此，已经将hexo文件部署到了在线仓库。  </p>
+<h5 id="将git内容同步到本地"><a href="#将git内容同步到本地" class="headerlink" title="将git内容同步到本地"></a>将git内容同步到本地</h5><p>假设之前将A电脑里的内容备份到git了，现在B电脑准备同步内容。<br>在gitbash中运行以下命令<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &lt;server&gt; <span class="special">#</span>将本地文件和云端仓库映射起来。这步不可以跳过</span><br><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>fetch是将云端所有内容拉取下来。reset则是不做任何合并处理，强制将本地内容指向刚刚同步下来的云端内容（正常pull的话需要考虑不少冲突的问题，比较麻烦。）  </p>
+</blockquote>
+<h5 id="更新文章后的同步操作"><a href="#更新文章后的同步操作" class="headerlink" title="更新文章后的同步操作"></a>更新文章后的同步操作</h5><p>在B电脑上写完了文章，用hexo d发布完了之后，这时候需要将新文章的md文件及新的配置更新更新到云端。<br>在同一个bash界面下运行以下命令：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这时候可以用git status查看状态，一般会显示刚刚更改过的文件状态。如：<br>    <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">(use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line">    modified:   db.json</span><br><span class="line">    new file:   source/_posts/test.md</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>上面的输出状态即说明’db.json’文件做了更改，source/_posts目录下新增了’test.md’文件。
+</code></pre><p>然后对更改添加说明并推送到远程仓库.<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m '更新信息'</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>提示如下，即表示上传同步成功<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To git@git.oschina.net:xxxx/blog-backup.git</span><br><span class="line"> + 2c77e1e...5616bc6 master -&gt; master (forced update)</span><br></pre></td></tr></table></figure></p>
+<p>同步到本地就用<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure></p>
+<p>如果不是第一次，不需要进行初始化</p>
 
       
     </div>
@@ -541,6 +577,8 @@
             <a href="/tags/hexo/" rel="tag">#hexo</a>
           
             <a href="/tags/博客/" rel="tag">#博客</a>
+          
+            <a href="/tags/同步/" rel="tag">#同步</a>
           
         </div>
       
@@ -644,7 +682,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -713,7 +751,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置过程"><span class="nav-number">2.</span> <span class="nav-text">配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#上传blog到git网站"><span class="nav-number">2.1.</span> <span class="nav-text">上传blog到git网站</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求"><span class="nav-number">1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置过程"><span class="nav-number">2.</span> <span class="nav-text">配置过程</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#上传blog到git网站"><span class="nav-number">2.1.</span> <span class="nav-text">上传blog到git网站</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#将git内容同步到本地"><span class="nav-number">2.2.</span> <span class="nav-text">将git内容同步到本地</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#更新文章后的同步操作"><span class="nav-number">2.3.</span> <span class="nav-text">更新文章后的同步操作</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
