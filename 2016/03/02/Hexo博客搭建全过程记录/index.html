@@ -82,7 +82,7 @@
 自从在github可以搭建静态博客后，我也加入了搭建个人博客的大潮。用过jekyll，当时只是感到新潮，搭完之后也没怎么更新过东西就费掉了。用过csdn，cnblog等技术园区的博客写文章，工作了之后也很少去更新。然而每每在浏览一些文章时，总能被感染到，或是文章总结的有深度，或是页面做的精致令人赏心悦目。于是当我看到hexo可以如此方便的搭建博客时，便忙里偷闲折腾了几天，就有了下面">
 <meta property="og:image" content="http://yoursite.com/images/sshkey.png">
 <meta property="og:image" content="http://yoursite.com/images/ssh-github.jpg">
-<meta property="og:updated_time" content="2016-03-03T03:29:44.765Z">
+<meta property="og:updated_time" content="2016-03-03T07:06:34.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建全过程记录">
 <meta name="twitter:description" content="写在前面的话
@@ -551,7 +551,7 @@
 <p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br><strong>总之全部保持默认就行，一路回车会自动生成key</strong><br><img src="/images/sshkey.png" alt="sshkey-pic">  </p>
 <h5 id="添加SSH-Key到Github"><a href="#添加SSH-Key到Github" class="headerlink" title="添加SSH Key到Github"></a>添加SSH Key到Github</h5><p>在本机设置SSH Key之后，需要添加到Github上以完成SSH链接的设置。  </p>
 <ol>
-<li>打开本地C:\Users.ssh\id_rsa.pub文件。此文件里面内容为刚才生成的私钥。需要准确复制，如果没有则需要设置隐藏文件可见。</li>
+<li>打开本地C:\Users.ssh\id_rsa.pub文件。此文件里面内容为刚才生成的公钥。需要准确复制，如果没有则需要设置隐藏文件可见。</li>
 </ol>
 <ol>
 <li>登陆github系统。点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
@@ -597,6 +597,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/03/03/Hexo博客多PC间同步/" rel="prev" title="Hexo博客多PC间同步">
+                Hexo博客多PC间同步 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -668,7 +672,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

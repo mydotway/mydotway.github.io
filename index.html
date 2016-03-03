@@ -464,8 +464,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/03/02/Hexo博客搭建全过程记录/" itemprop="url">
-                  Hexo博客搭建全过程记录
+                <a class="post-title-link" href="/2016/03/03/Hexo博客多PC间同步/" itemprop="url">
+                  Hexo博客多PC间同步
                 </a>
               
             
@@ -478,8 +478,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-02T14:07:53+08:00" content="2016-03-02">
-              2016-03-02
+            <time itemprop="dateCreated" datetime="2016-03-03T14:18:36+08:00" content="2016-03-03">
+              2016-03-03
             </time>
           </span>
 
@@ -508,8 +508,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/03/02/Hexo博客搭建全过程记录/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/02/Hexo博客搭建全过程记录/" itemprop="commentsCount"></span>
+                <a href="/2016/03/03/Hexo博客多PC间同步/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/03/Hexo博客多PC间同步/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -532,58 +532,19 @@
       
         
           
-            <p><em>写在前面的话</em></p>
+            <p><em>本文的说明均是基于win7 64位环境</em>  </p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的<a href="http://www.zhihu.com/question/21193762/answer/20811453" target="_blank" rel="external">讨论</a>，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的<a href="http://git.oschina.net/" target="_blank" rel="external">oschina</a>。</p>
+<h4 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h4><p>此处仅仅是单个git网站部署，如果是多网站部署请参考相关的多网站ssh部署方法。  </p>
+<h5 id="上传blog到git网站"><a href="#上传blog到git网站" class="headerlink" title="上传blog到git网站"></a>上传blog到git网站</h5><p>首先在osc上添加公钥，建立新的respo，此过程类似于上一篇在github上的过程。  </p>
+<ol>
+<li><p>删除文件夹内原有的<code>.git</code>缓存文件夹并编辑<code>.gitignore</code>文件  </p>
 <blockquote>
-<p>自从在github可以搭建静态博客后，我也加入了搭建个人博客的大潮。用过<strong>jekyll</strong><br>，当时只是感到新潮，搭完之后也没怎么更新过东西就费掉了。用过csdn，cnblog等技术<br>园区的博客写文章，工作了之后也很少去更新。然而每每在浏览一些文章时，总能被感染<br>到，或是文章总结的有深度，或是页面做的精致令人赏心悦目。于是当我看到hexo可以如<br>此方便的搭建博客时，便忙里偷闲折腾了几天，就有了下面的一番折腾。。。  </p>
+<p>Hexoblog文件下所有的<code>.git</code>缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。<br>(<code>.git</code> 默认是隐藏文件，需要开启隐藏文件显示，<strong><code>.git</code>文件被删除后整个文件对应的原有git仓库状态也会被清空</strong>)  </p>
 </blockquote>
-<hr>
-<h5 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h5><ul>
-<li>安装<a href="http://git-scm.com/" target="_blank" rel="external">git</a></li>
-<li>安装<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></li>
-<li>本人用的机器是win7 x64</li>
-</ul>
-<h5 id="hexo的安装和配置"><a href="#hexo的安装和配置" class="headerlink" title="hexo的安装和配置"></a>hexo的安装和配置</h5><p>hexo官网 <a href="https://hexo.io" target="_blank" rel="external">hexo.io</a><br>运行git bash,<br>输入命令  </p>
-<p><code>$ npm install -g hexo</code>   </p>
-<h5 id="调试部署hexo"><a href="#调试部署hexo" class="headerlink" title="调试部署hexo"></a>调试部署hexo</h5><p>在我的电脑中建立一个文件夹，命名为Hexoblog，打开git bash，切换到此文件夹的路径<br>输入命令  </p>
-<p><code>$ hexo init</code>   </p>
-<p>Hexo 会自动安装文件，等安装完成后，可以执行命令查看<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
-<p>然后在浏览器中输入localhost:4000 进行查看</p>
-<h5 id="更改主题"><a href="#更改主题" class="headerlink" title="更改主题"></a>更改主题</h5><p>如果觉得默认的主题不够好，可以选择个人比较喜欢的主题进行替换<br>在git bash界面中切换到themes目录下，运行命令  </p>
-<p><code>$ git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
-<p>之后会在themes目录下生成文件夹next，可以查看next目录下的文件。另外，会在next下生成一个<strong>.git的隐藏文件</strong>。</p>
-<h5 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h5><p>下载完主题后就是启用。可以参照官网 <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a> 进行配置，官网描述的很清楚。<br>主要是修改Hexoblog目录下的config.yml配置文件中的theme属性，将其设置为next 就可以启用。更详细的配置直接参考官网。</p>
-<p>在本地运行hexo进行查看。在git bash界面中切换到Hexoblog根目录下，运行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br><span class="line">$ hexo g</span><br><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
-<p>浏览器中输入localhost:4000查看，如果出现端口被占用的情况，则更换端口，比如换成3000，命令为：<br><code>$ hexo server -p 3000</code>  </p>
-<h6 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h6><p>如何将Hexo的文件放到github上进行托管并生成静态的网页  </p>
-<h6 id="配置SSH-keys"><a href="#配置SSH-keys" class="headerlink" title="配置SSH keys"></a>配置SSH keys</h6><p>通过ssh key的配置让本地git项目和远程github建立联系。</p>
-<h6 id="检查SSH-keys的设置"><a href="#检查SSH-keys的设置" class="headerlink" title="检查SSH keys的设置"></a>检查SSH keys的设置</h6><p>首先检查电脑是否存在ssh key：<br><code>$ cd ~/. ssh 检查本机的ssh密钥</code><br>如果提示： No such file or directory说明你是第一次使用git与github或其他git库建立连接。<br>生成新的SSH key:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"邮件地址@youremail.com"</span></span><br><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/Users/your_user_directory/.ssh/id_rsa):&lt;回车就好&gt;</span><br></pre></td></tr></table></figure>
-<p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」</p>
-<p>然后系统会要求输入密码：  </p>
-<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):&lt;输入加密串&gt;</span><br><span class="line">Enter same passphrase again:&lt;再次输入加密串&gt;</span><br></pre></td></tr></table></figure>
-<p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。<br><strong>总之全部保持默认就行，一路回车会自动生成key</strong><br><img src="/images/sshkey.png" alt="sshkey-pic">  </p>
-<h5 id="添加SSH-Key到Github"><a href="#添加SSH-Key到Github" class="headerlink" title="添加SSH Key到Github"></a>添加SSH Key到Github</h5><p>在本机设置SSH Key之后，需要添加到Github上以完成SSH链接的设置。  </p>
-<ol>
-<li>打开本地C:\Users.ssh\id_rsa.pub文件。此文件里面内容为刚才生成的私钥。需要准确复制，如果没有则需要设置隐藏文件可见。</li>
+</li>
+<li><p>sdjfkds</p>
+</li>
 </ol>
-<ol>
-<li>登陆github系统。点击右上角的 Account Settings—&gt;SSH Public keys —&gt; add another public keys</li>
-</ol>
-<ol>
-<li>把本地生成的密钥复制到key文本框中， 点击 add key。  </li>
-</ol>
-<p><img src="/images/ssh-github.jpg" alt="sshkey-github">  </p>
-<h5 id="验证测试"><a href="#验证测试" class="headerlink" title="验证测试"></a>验证测试</h5><p><code>$ ssh -T git@github.com</code>  </p>
-<p>接着会反馈<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The authenticity of host 'github.com (207.97.227.239)' can't be established.</span><br><span class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</span><br><span class="line">Are you sure you want to continue connecting (yes/no)?</span><br></pre></td></tr></table></figure></p>
-<p>输入yes，会显示<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi mydotway! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure></p>
-<p>则证明设置成功。  </p>
-<h6 id="设置用户信息"><a href="#设置用户信息" class="headerlink" title="设置用户信息"></a>设置用户信息</h6><p>git会根据用户的名字和邮箱来记录提交。所以需要进行用户名和邮箱的配置。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"xxxxx"</span>//用户名</span><br><span class="line">$ git config --global user.email  <span class="string">"xxxx@xxxx"</span>//填写自己的邮箱</span><br></pre></td></tr></table></figure></p>
-<h5 id="部署hexo到github"><a href="#部署hexo到github" class="headerlink" title="部署hexo到github"></a>部署hexo到github</h5><p>在部署到Github前还需要配置根目录下的_config.yml文件，找到<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="special">#</span> Deployment</span><br><span class="line"><span class="special">#</span><span class="special">#</span> Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type:</span><br></pre></td></tr></table></figure></p>
-<p>修改为：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="special">#</span> Deployment</span><br><span class="line"><span class="special">#</span><span class="special">#</span> Docs: http://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: github</span><br><span class="line">  repository: https://github.com/mydotway/mydotway.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>以上配置完后可以部署到github上<br><code>$ hexo d</code>  </p>
-<h5 id="总结：部署步骤"><a href="#总结：部署步骤" class="headerlink" title="总结：部署步骤"></a>总结：部署步骤</h5><p>每次部署的步骤，可以分为以下几步：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<h5 id="命令总结"><a href="#命令总结" class="headerlink" title="命令总结"></a>命令总结</h5><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">hexo new "postName" <span class="special">#</span>新建文章</span><br><span class="line">hexo new page "pageName" <span class="special">#</span>新建页面</span><br><span class="line">hexo generate <span class="special">#</span>生成静态页面至public目录</span><br><span class="line">hexo server <span class="special">#</span>开启预览访问端口（默认端口4000，'ctrl + c'关闭server）</span><br><span class="line">hexo deploy <span class="special">#</span>将.deploy目录部署到GitHub</span><br><span class="line">hexo help  <span class="special">#</span> 查看帮助</span><br><span class="line">hexo version  <span class="special">#</span>查看Hexo的版本</span><br></pre></td></tr></table></figure>
-<p>这是最基本的Hexo+Github搭建过程。后面还会就博客页面的优化及多PC写作、markdown写作进行总结。</p>
 
           
         
@@ -646,7 +607,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

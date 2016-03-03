@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-03T03:29:44.765Z</updated>
+  <updated>2016-03-03T07:24:43.822Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Hexo博客多PC间同步</title>
+    <link href="http://yoursite.com/2016/03/03/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9APC%E9%97%B4%E5%90%8C%E6%AD%A5/"/>
+    <id>http://yoursite.com/2016/03/03/Hexo博客多PC间同步/</id>
+    <published>2016-03-03T06:18:36.000Z</published>
+    <updated>2016-03-03T07:24:43.822Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;本文的说明均是基于win7 64位环境&lt;/em&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h4&gt;&lt;p&gt;由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的&lt;a href=&quot;http://www.zhihu.com/question/21193762/answer/20811453&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;讨论&lt;/a&gt;，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的&lt;a href=&quot;http://git.oschina.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oschina&lt;/a&gt;。&lt;/p&gt;
+&lt;h4 id=&quot;配置过程&quot;&gt;&lt;a href=&quot;#配置过程&quot; class=&quot;headerlink&quot; title=&quot;配置过程&quot;&gt;&lt;/a&gt;配置过程&lt;/h4&gt;&lt;p&gt;此处仅仅是单个git网站部署，如果是多网站部署请参考相关的多网站ssh部署方法。  &lt;/p&gt;
+&lt;h5 id=&quot;上传blog到git网站&quot;&gt;&lt;a href=&quot;#上传blog到git网站&quot; class=&quot;headerlink&quot; title=&quot;上传blog到git网站&quot;&gt;&lt;/a&gt;上传blog到git网站&lt;/h5&gt;&lt;p&gt;首先在osc上添加公钥，建立新的respo，此过程类似于上一篇在github上的过程。  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;删除文件夹内原有的&lt;code&gt;.git&lt;/code&gt;缓存文件夹并编辑&lt;code&gt;.gitignore&lt;/code&gt;文件  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hexoblog文件下所有的&lt;code&gt;.git&lt;/code&gt;缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。&lt;br&gt;(&lt;code&gt;.git&lt;/code&gt; 默认是隐藏文件，需要开启隐藏文件显示，&lt;strong&gt;&lt;code&gt;.git&lt;/code&gt;文件被删除后整个文件对应的原有git仓库状态也会被清空&lt;/strong&gt;)  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;sdjfkds&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;本文的说明均是基于win7 64位环境&lt;/em&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h4&gt;&lt;p&gt;由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="博客" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo博客搭建全过程记录</title>
     <link href="http://yoursite.com/2016/03/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%85%A8%E8%BF%87%E7%A8%8B%E8%AE%B0%E5%BD%95/"/>
     <id>http://yoursite.com/2016/03/02/Hexo博客搭建全过程记录/</id>
     <published>2016-03-02T06:07:53.000Z</published>
-    <updated>2016-03-03T03:29:44.765Z</updated>
+    <updated>2016-03-03T07:06:34.754Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;写在前面的话&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -54,7 +92,7 @@
 &lt;p&gt;在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。&lt;br&gt;&lt;strong&gt;总之全部保持默认就行，一路回车会自动生成key&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;/images/sshkey.png&quot; alt=&quot;sshkey-pic&quot;&gt;  &lt;/p&gt;
 &lt;h5 id=&quot;添加SSH-Key到Github&quot;&gt;&lt;a href=&quot;#添加SSH-Key到Github&quot; class=&quot;headerlink&quot; title=&quot;添加SSH Key到Github&quot;&gt;&lt;/a&gt;添加SSH Key到Github&lt;/h5&gt;&lt;p&gt;在本机设置SSH Key之后，需要添加到Github上以完成SSH链接的设置。  &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;打开本地C:\Users.ssh\id_rsa.pub文件。此文件里面内容为刚才生成的私钥。需要准确复制，如果没有则需要设置隐藏文件可见。&lt;/li&gt;
+&lt;li&gt;打开本地C:\Users.ssh\id_rsa.pub文件。此文件里面内容为刚才生成的公钥。需要准确复制，如果没有则需要设置隐藏文件可见。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ol&gt;
 &lt;li&gt;登陆github系统。点击右上角的 Account Settings—&amp;gt;SSH Public keys —&amp;gt; add another public keys&lt;/li&gt;
