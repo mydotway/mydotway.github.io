@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-04T00:29:21.162Z</updated>
+  <updated>2016-03-04T06:42:29.229Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>oracle日期加减小结</title>
+    <link href="http://yoursite.com/2016/03/04/oracle%E6%97%A5%E6%9C%9F%E5%8A%A0%E5%87%8F%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2016/03/04/oracle日期加减小结/</id>
+    <published>2016-03-04T06:08:45.000Z</published>
+    <updated>2016-03-04T06:42:29.229Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。&lt;/em&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;加法&quot;&gt;&lt;a href=&quot;#加法&quot; class=&quot;headerlink&quot; title=&quot;加法&quot;&gt;&lt;/a&gt;加法&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;select sysdate,add_months(sysdate,12) from dual;        –加1年&lt;br&gt; select sysdate,add_months(sysdate,1) from dual;        –加1月&lt;br&gt; select sysdate,to_date(to_char(sysdate+7,’yyyy-mm-dd HH24:MI:SS’), yyyy-mm-dd HH24:MI:SS’) from dual;   –加1星期&lt;br&gt; select sysdate,to_char(sysdate+1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –加1天&lt;br&gt; select sysdate,to_char(sysdate+1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1小时&lt;br&gt; select sysdate,to_char(sysdate+1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1分钟&lt;br&gt; select sysdate,to_char(sysdate+1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1秒    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;减法&quot;&gt;&lt;a href=&quot;#减法&quot; class=&quot;headerlink&quot; title=&quot;减法&quot;&gt;&lt;/a&gt;减法&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;select sysdate,add_months(sysdate,-12) from dual;        –减1年&lt;br&gt; select sysdate,add_months(sysdate,-1) from dual;        –减1月&lt;br&gt; select sysdate,to_char(sysdate-7,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1星期&lt;br&gt; select sysdate,to_char(sysdate-1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1天&lt;br&gt; select sysdate,to_char(sysdate-1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1小时&lt;br&gt; select sysdate,to_char(sysdate-1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1分钟&lt;br&gt; select sysdate,to_char(sysdate-1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1秒  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;code&gt;日期与日期之间不能相加，日期与数字就可相加&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SQL&amp;gt;   select   sysdate+1   from   dual; 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;code&gt;日期与日期可以相减&lt;/code&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SQL&amp;gt;   select   sysdate-sysdate   from   dual;
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&lt;strong&gt;Last_Day（D）&lt;/strong&gt;   返回包含日期D的月份的最后一天的日期.&lt;br&gt;&lt;strong&gt;Months_Between（D1，D2）&lt;/strong&gt;   返回D1、D2之间的月份数目，D1&amp;lt;D2那么结果为正数，反之为负&lt;br&gt;&lt;strong&gt;New_Time（D，Z1，Z2）&lt;/strong&gt;   返回时区Z1里时间为D时Z2时区的时间&lt;br&gt;&lt;strong&gt;NEXT_DAY(D, X)&lt;/strong&gt;   时间点D开始，下一個星期几的日期（星期日=1 星期一= 2 星期二=3，星期三=4  星期四=5  星期五 = 6  星期六 = 7）。返回值具有与变元D 相同的小时数、分钟数和秒数构成。&lt;br&gt;例如：select NEXT_DAY(‘18-7月-11’, 2) from dual;–返回：2011-7-25也就是周一&lt;br&gt;&lt;strong&gt;Round（D，F）&lt;/strong&gt;   日期D按照格式F进行舍入，对日期的四舍五入运算，月的四捨五入以每月的15号为准 ，年的四捨五入以每年6月为准。&lt;br&gt;select sysdate, ROUND(sysdate,’year’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1&lt;br&gt;F可以是以下几个：&lt;br&gt;SS 秒；MI 分钟；HH 小时；DD /day  天 ；MM /mouth    月份；YY/year    年&lt;br&gt;如果是用day, nouth,year 一定要用小写才行&lt;br&gt;&lt;strong&gt;Trunc（D，F）&lt;/strong&gt;  按照格式F截断时间D ，trunc也可以对于number进行截断，它和round类似，区别是，round是四舍五入的，但是trunc是直接截断，例如&lt;br&gt;select sysdate, TRUNC(sysdate,’yyyy’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。&lt;/em&gt;  &lt;/p&gt;
+&lt;h3 id=&quot;加法&quot;&gt;&lt;a href=&quot;#加法&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+      <category term="Oracle数据库" scheme="http://yoursite.com/categories/Oracle%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="oracle Date" scheme="http://yoursite.com/tags/oracle-Date/"/>
+    
+  </entry>
   
   <entry>
     <title>Markdown Tool</title>

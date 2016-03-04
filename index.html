@@ -455,6 +455,128 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/04/oracle日期加减小结/" itemprop="url">
+                  oracle日期加减小结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-04T14:08:45+08:00" content="2016-03-04">
+              2016-03-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Oracle数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/04/oracle日期加减小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/04/oracle日期加减小结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。</em>  </p>
+<h3 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h3><blockquote>
+<p>select sysdate,add_months(sysdate,12) from dual;        –加1年<br> select sysdate,add_months(sysdate,1) from dual;        –加1月<br> select sysdate,to_date(to_char(sysdate+7,’yyyy-mm-dd HH24:MI:SS’), yyyy-mm-dd HH24:MI:SS’) from dual;   –加1星期<br> select sysdate,to_char(sysdate+1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –加1天<br> select sysdate,to_char(sysdate+1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1小时<br> select sysdate,to_char(sysdate+1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1分钟<br> select sysdate,to_char(sysdate+1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1秒    </p>
+</blockquote>
+<h3 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h3><blockquote>
+<p>select sysdate,add_months(sysdate,-12) from dual;        –减1年<br> select sysdate,add_months(sysdate,-1) from dual;        –减1月<br> select sysdate,to_char(sysdate-7,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1星期<br> select sysdate,to_char(sysdate-1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1天<br> select sysdate,to_char(sysdate-1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1小时<br> select sysdate,to_char(sysdate-1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1分钟<br> select sysdate,to_char(sysdate-1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1秒  </p>
+</blockquote>
+<p><code>日期与日期之间不能相加，日期与数字就可相加</code></p>
+<pre><code>SQL&gt;   select   sysdate+1   from   dual; 
+</code></pre><p><code>日期与日期可以相减</code></p>
+<pre><code>SQL&gt;   select   sysdate-sysdate   from   dual;
+</code></pre><hr>
+<p><strong>Last_Day（D）</strong>   返回包含日期D的月份的最后一天的日期.<br><strong>Months_Between（D1，D2）</strong>   返回D1、D2之间的月份数目，D1&lt;D2那么结果为正数，反之为负<br><strong>New_Time（D，Z1，Z2）</strong>   返回时区Z1里时间为D时Z2时区的时间<br><strong>NEXT_DAY(D, X)</strong>   时间点D开始，下一個星期几的日期（星期日=1 星期一= 2 星期二=3，星期三=4  星期四=5  星期五 = 6  星期六 = 7）。返回值具有与变元D 相同的小时数、分钟数和秒数构成。<br>例如：select NEXT_DAY(‘18-7月-11’, 2) from dual;–返回：2011-7-25也就是周一<br><strong>Round（D，F）</strong>   日期D按照格式F进行舍入，对日期的四舍五入运算，月的四捨五入以每月的15号为准 ，年的四捨五入以每年6月为准。<br>select sysdate, ROUND(sysdate,’year’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1<br>F可以是以下几个：<br>SS 秒；MI 分钟；HH 小时；DD /day  天 ；MM /mouth    月份；YY/year    年<br>如果是用day, nouth,year 一定要用小写才行<br><strong>Trunc（D，F）</strong>  按照格式F截断时间D ，trunc也可以对于number进行截断，它和round类似，区别是，round是四舍五入的，但是trunc是直接截断，例如<br>select sysdate, TRUNC(sysdate,’yyyy’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1  </p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/03/Markdown-Tool/" itemprop="url">
                   Markdown Tool
                 </a>
@@ -1165,7 +1287,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1173,7 +1295,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1182,7 +1304,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

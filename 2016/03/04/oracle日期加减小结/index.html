@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="oracle Date," />
 
 
 
@@ -70,15 +70,22 @@
 </script>
 
 
-<meta name="description" content="多思，善问，勤学 专心，专一，专注">
-<meta property="og:type" content="website">
-<meta property="og:title" content="人生苦旅">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta name="description" content="最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。  
+加法
+select sysdate,add_months(sysdate,12) from dual;        –加1年 select sysdate,add_months(sysdate,1) from dual;        –加1月">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle日期加减小结">
+<meta property="og:url" content="http://yoursite.com/2016/03/04/oracle日期加减小结/index.html">
 <meta property="og:site_name" content="人生苦旅">
-<meta property="og:description" content="多思，善问，勤学 专心，专一，专注">
+<meta property="og:description" content="最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。  
+加法
+select sysdate,add_months(sysdate,12) from dual;        –加1年 select sysdate,add_months(sysdate,1) from dual;        –加1月">
+<meta property="og:updated_time" content="2016-03-04T06:42:29.229Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="人生苦旅">
-<meta name="twitter:description" content="多思，善问，勤学 专心，专一，专注">
+<meta name="twitter:title" content="oracle日期加减小结">
+<meta name="twitter:description" content="最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。  
+加法
+select sysdate,add_months(sysdate,12) from dual;        –加1年 select sysdate,add_months(sysdate,1) from dual;        –加1月">
 
 
 
@@ -100,7 +107,7 @@
 
 
 
-  <title> 归档 | 人生苦旅 </title>
+  <title> oracle日期加减小结 | 人生苦旅 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -129,7 +136,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  page-archive  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -425,251 +432,144 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
-
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 6 篇日志。 继续努力。
-    </span>
-
+  <div id="posts" class="posts-expand">
     
-
-      
-      
-      
-
-      
-        
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
-        </div>
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/04/oracle日期加减小结/" itemprop="url">
-              
-                <span itemprop="name">oracle日期加减小结</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-04T14:08:45+08:00"
-              content="2016-03-04" >
-          03-04
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/03/Markdown-Tool/" itemprop="url">
-              
-                <span itemprop="name">Markdown Tool</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-03T20:25:59+08:00"
-              content="2016-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/03/markdown编写文章/" itemprop="url">
-              
-                <span itemprop="name">markdown编写文章</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-03T17:15:41+08:00"
-              content="2016-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/03/Hexo博客多PC间同步/" itemprop="url">
-              
-                <span itemprop="name">Hexo博客多PC间同步</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-03T14:18:36+08:00"
-              content="2016-03-03" >
-          03-03
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/02/Hexo博客搭建全过程记录/" itemprop="url">
-              
-                <span itemprop="name">Hexo博客搭建全过程记录</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-02T14:07:53+08:00"
-              content="2016-03-02" >
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-      
-      
-      
-
-      
-      
-
-      
-
-  <article class="post post-type-tags" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
-        
-            <a class="post-title-link" href="/2016/03/01/新的开始/" itemprop="url">
-              
-                <span itemprop="name">新的开始</span>
-              
-            </a>
-        
-      </h1>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2016-03-01T16:34:27+08:00"
-              content="2016-03-01" >
-          03-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-    
-
-  </section>
 
   
+  
 
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                oracle日期加减小结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-04T14:08:45+08:00" content="2016-03-04">
+              2016-03-04
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Oracle数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">Oracle数据库</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/04/oracle日期加减小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/04/oracle日期加减小结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>最近做数据同步的时候发现增量同步时总是会丢失数据，因此需要做同步时间的延迟。因此就要用到oracle日期的减法。比如说同步的时间戳往后延迟10分钟。</em>  </p>
+<h3 id="加法"><a href="#加法" class="headerlink" title="加法"></a>加法</h3><blockquote>
+<p>select sysdate,add_months(sysdate,12) from dual;        –加1年<br> select sysdate,add_months(sysdate,1) from dual;        –加1月<br> select sysdate,to_date(to_char(sysdate+7,’yyyy-mm-dd HH24:MI:SS’), yyyy-mm-dd HH24:MI:SS’) from dual;   –加1星期<br> select sysdate,to_char(sysdate+1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –加1天<br> select sysdate,to_char(sysdate+1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1小时<br> select sysdate,to_char(sysdate+1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1分钟<br> select sysdate,to_char(sysdate+1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –加1秒    </p>
+</blockquote>
+<h3 id="减法"><a href="#减法" class="headerlink" title="减法"></a>减法</h3><blockquote>
+<p>select sysdate,add_months(sysdate,-12) from dual;        –减1年<br> select sysdate,add_months(sysdate,-1) from dual;        –减1月<br> select sysdate,to_char(sysdate-7,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1星期<br> select sysdate,to_char(sysdate-1,’yyyy-mm-dd HH24:MI:SS’) from dual;   –减1天<br> select sysdate,to_char(sysdate-1/24,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1小时<br> select sysdate,to_char(sysdate-1/24/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1分钟<br> select sysdate,to_char(sysdate-1/24/60/60,’yyyy-mm-dd HH24:MI:SS’) from dual;  –减1秒  </p>
+</blockquote>
+<p><code>日期与日期之间不能相加，日期与数字就可相加</code></p>
+<pre><code>SQL&gt;   select   sysdate+1   from   dual; 
+</code></pre><p><code>日期与日期可以相减</code></p>
+<pre><code>SQL&gt;   select   sysdate-sysdate   from   dual;
+</code></pre><hr>
+<p><strong>Last_Day（D）</strong>   返回包含日期D的月份的最后一天的日期.<br><strong>Months_Between（D1，D2）</strong>   返回D1、D2之间的月份数目，D1&lt;D2那么结果为正数，反之为负<br><strong>New_Time（D，Z1，Z2）</strong>   返回时区Z1里时间为D时Z2时区的时间<br><strong>NEXT_DAY(D, X)</strong>   时间点D开始，下一個星期几的日期（星期日=1 星期一= 2 星期二=3，星期三=4  星期四=5  星期五 = 6  星期六 = 7）。返回值具有与变元D 相同的小时数、分钟数和秒数构成。<br>例如：select NEXT_DAY(‘18-7月-11’, 2) from dual;–返回：2011-7-25也就是周一<br><strong>Round（D，F）</strong>   日期D按照格式F进行舍入，对日期的四舍五入运算，月的四捨五入以每月的15号为准 ，年的四捨五入以每年6月为准。<br>select sysdate, ROUND(sysdate,’year’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1<br>F可以是以下几个：<br>SS 秒；MI 分钟；HH 小时；DD /day  天 ；MM /mouth    月份；YY/year    年<br>如果是用day, nouth,year 一定要用小写才行<br><strong>Trunc（D，F）</strong>  按照格式F截断时间D ，trunc也可以对于number进行截断，它和round类似，区别是，round是四舍五入的，但是trunc是直接截断，例如<br>select sysdate, TRUNC(sysdate,’yyyy’) aa from dual;  –返回：2016/3/4 14:36:34 2016/1/1  </p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle-Date/" rel="tag">#oracle Date</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/03/Markdown-Tool/" rel="next" title="Markdown Tool">
+                <i class="fa fa-chevron-left"></i> Markdown Tool
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -677,6 +577,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/03/04/oracle日期加减小结/"
+           data-title="oracle日期加减小结" data-url="http://yoursite.com/2016/03/04/oracle日期加减小结/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -696,8 +604,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -785,6 +702,23 @@
       </section>
 
       
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#加法"><span class="nav-number">1.</span> <span class="nav-text">加法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#减法"><span class="nav-number">2.</span> <span class="nav-text">减法</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
 
     </div>
   </aside>
@@ -864,10 +798,165 @@
 
   
   
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
 
 
   
