@@ -1,19 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>My_dotway blog</title>
+  <title>人生苦旅</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-03T09:03:53.625Z</updated>
+  <updated>2016-03-04T00:29:21.162Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>My_dotway</name>
+    <name>Jeanson</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Markdown Tool</title>
+    <link href="http://yoursite.com/2016/03/03/Markdown-Tool/"/>
+    <id>http://yoursite.com/2016/03/03/Markdown-Tool/</id>
+    <published>2016-03-03T12:25:59.000Z</published>
+    <updated>2016-03-04T00:29:21.162Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;高big的 Markdown 写作体验 - Sublime Text 3 + OmniMarkupPreviewer+MarkdownEditing&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;OmniMarkupPreviewer-安装&quot;&gt;&lt;a href=&quot;#OmniMarkupPreviewer-安装&quot; class=&quot;headerlink&quot; title=&quot;OmniMarkupPreviewer 安装&quot;&gt;&lt;/a&gt;OmniMarkupPreviewer 安装&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;文章仅提供了简单的安装使用说明，&lt;br&gt;你可以在 Sublime Text 内通过 Package Control 输入 Install Package 来安装 OmniMarkupPreviewer, 当然了首先要安装package control，&lt;br&gt;安装完后重启即可以使用。为了能够在其他电脑上直接拷贝使用，sublime text版本使用的是portable版。  &lt;/p&gt;
+&lt;p&gt;通过 OmniMarkupPreviewer可以预览编写的markdown文件，windows下快捷键是ctrl+alt+O。&lt;br&gt;预览的默认ip地址是本机，配置文件是&lt;code&gt;OmniMarkupPreviewer.sublime-settings&lt;/code&gt;.&lt;br&gt;“server_host”: “127.0.0.1”, 可以将ip改为自己电脑的ip地址，如，192.168.200.1只要另一台可以ping通本电脑，就可以在另一台电脑的浏览器中输入地址进行多屏预览，如输入：&lt;a href=&quot;http://192.168.200.1:51004/view/28，就可以在浏览器中在线预览正在编辑的markdown文件。&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://192.168.200.1:51004/view/28，就可以在浏览器中在线预览正在编辑的markdown文件。&lt;/a&gt;    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;MarkdownEditing安装&quot;&gt;&lt;a href=&quot;#MarkdownEditing安装&quot; class=&quot;headerlink&quot; title=&quot;MarkdownEditing安装&quot;&gt;&lt;/a&gt;MarkdownEditing安装&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;同样，sublime安装了Package Control的前提下，打开命令面板输入MarkdownEditing进行安装，重启后就可以使用。&lt;br&gt;除了默认的颜色主题外，MarkdownEditing 还提供了一个高亮显示编辑行 MarkdownEditor-Focus，就可以在 Markdown.sublime-settings 这个文件中找到并去掉注释保存生效。&lt;br&gt;此外也可以添加一些自己的设置，像如果要要实现可以“滚动超过最后一行”，那么就可以在其中添加 “scroll_past_end”: true,。&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;高big的 Markdown 写作体验 - Sublime Text 3 + OmniMarkupPreviewer+MarkdownEditing&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;OmniMarkupPreviewer-安装&quot;&gt;&lt;a href=&quot;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>markdown编写文章</title>
+    <link href="http://yoursite.com/2016/03/03/markdown%E7%BC%96%E5%86%99%E6%96%87%E7%AB%A0/"/>
+    <id>http://yoursite.com/2016/03/03/markdown编写文章/</id>
+    <published>2016-03-03T09:15:41.000Z</published>
+    <updated>2016-03-04T00:25:29.683Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;markdown编辑器的优点：&quot;&gt;&lt;a href=&quot;#markdown编辑器的优点：&quot; class=&quot;headerlink&quot; title=&quot;markdown编辑器的优点：&quot;&gt;&lt;/a&gt;markdown编辑器的优点：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;纯文本，所以兼容性极强，可以用所有文本编辑器打开。  &lt;/li&gt;
+&lt;li&gt;让你专注于文字而不是排版。  &lt;/li&gt;
+&lt;li&gt;格式转换方便，Markdown 的文本你可以轻松转换为 html、电子书等。  &lt;/li&gt;
+&lt;li&gt;Markdown 的标记语法有极好的可读性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下参考文章&lt;a href=&quot;http://www.jianshu.com/p/q81RER&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;新手markdown&lt;/a&gt;&lt;/p&gt;
+&lt;h1 id=&quot;标题&quot;&gt;&lt;a href=&quot;#标题&quot; class=&quot;headerlink&quot; title=&quot;标题&quot;&gt;&lt;/a&gt;标题&lt;/h1&gt;&lt;p&gt;这是最为常用的格式，在平时常用的的文本编辑器中大多是这样实现的：输入文本、选中文本、设置标题格式。&lt;/p&gt;
+&lt;p&gt;而在 Markdown 中，你只需要在文本前面加上 # 即可，同理、你还可以增加二级标题、三级标题、四级标题、五级标题和六级标题，总共六级，只需要增加 # 即可，标题字号相应降低。例如：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 一级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 二级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 三级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 四级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 五级标题&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;#&lt;/span&gt; 六级标题&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注：# 和「一级标题」之间建议保留一个字符的空格，这是最标准的 Markdown 写法。&lt;/p&gt;
+&lt;h1 id=&quot;列表&quot;&gt;&lt;a href=&quot;#列表&quot; class=&quot;headerlink&quot; title=&quot;列表&quot;&gt;&lt;/a&gt;列表&lt;/h1&gt;&lt;p&gt;列表格式也很常用，在 Markdown 中，你只需要在文字前面加上 - 就可以了，例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;- 文本1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 文本2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- 文本3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果你希望有序列表，也可以在文字前面加上 1. 2. 3. 就可以了，例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1. 文本1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2. 文本2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3. 文本3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注：-、1.和文本之间要保留一个字符的空格。  &lt;/p&gt;
+&lt;h1 id=&quot;引用&quot;&gt;&lt;a href=&quot;#引用&quot; class=&quot;headerlink&quot; title=&quot;引用&quot;&gt;&lt;/a&gt;引用&lt;/h1&gt;&lt;p&gt;在我们写作的时候经常需要引用他人的文字，这个时候引用这个格式就很有必要了，在 Markdown 中，你只需要在你希望引用的文字前面加上 &amp;gt; 就好了，例如：  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;gt; 一盏灯， 一片昏黄； 一简书， 一杯淡茶。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注：&amp;gt; 和文本之间要保留一个字符的空格。&lt;/p&gt;
+&lt;h1 id=&quot;粗体和斜体&quot;&gt;&lt;a href=&quot;#粗体和斜体&quot; class=&quot;headerlink&quot; title=&quot;粗体和斜体&quot;&gt;&lt;/a&gt;粗体和斜体&lt;/h1&gt;&lt;p&gt;Markdown 的粗体和斜体也非常简单，用两个 &lt;code&gt;*&lt;/code&gt; 包含一段文本就是粗体的语法，用一个 &lt;code&gt;*&lt;/code&gt; 包含一段文本就是斜体的语法。例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;*一盏灯*， 一片昏黄；**一简书**， 一杯淡茶。&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最终显示的就是下文，其中「一盏灯」是斜体，「一简书」是粗体：&lt;br&gt;&lt;em&gt;一盏灯&lt;/em&gt;，一片昏黄；&lt;strong&gt;一简书&lt;/strong&gt;, 一杯淡茶。  &lt;/p&gt;
+&lt;p&gt;在 Markdown 中，插入链接不需要其他按钮，你只需要这样使用如：   &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;special&quot;&gt;[&lt;/span&gt;简书&lt;span class=&quot;special&quot;&gt;]&lt;/span&gt;(http://jianshu.io)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在 Markdown 中，插入图片不需要其他按钮，你这样的语法即可，例如：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;!&lt;span class=&quot;special&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;]&lt;/span&gt;(http://ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注：插入图片的语法和链接的语法很像，只是前面多了一个 ！。  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;markdown编辑器的优点：&quot;&gt;&lt;a href=&quot;#markdown编辑器的优点：&quot; class=&quot;headerlink&quot; title=&quot;markdown编辑器的优点：&quot;&gt;&lt;/a&gt;markdown编辑器的优点：&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;纯文本，所以兼容性极强，
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="markdown" scheme="http://yoursite.com/tags/markdown/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo博客多PC间同步</title>
@@ -174,11 +271,11 @@
     <link href="http://yoursite.com/2016/03/01/%E6%96%B0%E7%9A%84%E5%BC%80%E5%A7%8B/"/>
     <id>http://yoursite.com/2016/03/01/新的开始/</id>
     <published>2016-03-01T08:34:27.000Z</published>
-    <updated>2016-03-03T05:54:19.057Z</updated>
+    <updated>2016-03-04T00:25:29.684Z</updated>
     
     <content type="html">&lt;p&gt;&lt;strong&gt;终于等到你&lt;/strong&gt;一直以来(ˇˍˇ) 想～搭建一个属于自己的博客，在这里能够尽情的书写自己的心情，记录工作和生活的点滴，现在这个愿望终于实现了。多谢众大神的帮助，使我能够顺利搭建起此博客，在此谢过所有帮助我的人。在以后的几篇博客中，我也会记录我这次搭建博客的一些心得，希望能够对其他人有所帮助。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;非常荣幸生活在这样一个信息发达的时代。&lt;/strong&gt;在互联网的海洋中，我们能够获取我们想要的知识，也总有一些乐于奉献的人，在互联网上布道传业，开源的精神使得信息交流更加无碍。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;感谢这个时代&lt;/strong&gt;&lt;br&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/p3.jpg&quot; alt=&quot;坚持&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;感谢这个时代&lt;/strong&gt;&lt;br&gt; &lt;center&gt; &lt;iframe name=&quot;iframe_canvas&quot; src=&quot;http://douban.fm/partner/baidu/doubanradio&quot; scrolling=&quot;no&quot; frameborder=&quot;0&quot; width=&quot;400&quot; height=&quot;200&quot;&gt;&lt;/iframe&gt; &lt;/center&gt;&lt;br&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/p3.jpg&quot; alt=&quot;坚持&quot;&gt;&lt;/p&gt;
 </content>
     
     <summary type="html">
