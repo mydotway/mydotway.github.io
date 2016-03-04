@@ -87,7 +87,7 @@
     <link href="http://yoursite.com/2016/03/03/markdown%E7%BC%96%E5%86%99%E6%96%87%E7%AB%A0/"/>
     <id>http://yoursite.com/2016/03/03/markdown编写文章/</id>
     <published>2016-03-03T09:15:41.000Z</published>
-    <updated>2016-03-04T00:25:29.683Z</updated>
+    <updated>2016-03-04T06:57:06.393Z</updated>
     
     <content type="html">&lt;h2 id=&quot;markdown编辑器的优点：&quot;&gt;&lt;a href=&quot;#markdown编辑器的优点：&quot; class=&quot;headerlink&quot; title=&quot;markdown编辑器的优点：&quot;&gt;&lt;/a&gt;markdown编辑器的优点：&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;纯文本，所以兼容性极强，可以用所有文本编辑器打开。  &lt;/li&gt;
@@ -130,6 +130,21 @@
 &lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;!&lt;span class=&quot;special&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;special&quot;&gt;]&lt;/span&gt;(http://ww4.sinaimg.cn/bmiddle/aa397b7fjw1dzplsgpdw5j.jpg)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;注：插入图片的语法和链接的语法很像，只是前面多了一个 ！。  &lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Markdown语法&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1、分段： 两个回车&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt; 2、换行 两个空格 + 回车&lt;/p&gt;
+&lt;p&gt; 3、标题 # ~ ###### 井号的个数表示几级标题，即Markdown可以表示一级标题到六级标题&lt;/p&gt;
+&lt;p&gt; 4、引用 &gt;&lt;/p&gt;
+&lt;p&gt; 5、列表 * ， + ， - ， 1. ，选其中之一，注意后面有个空格&lt;/p&gt;
+&lt;p&gt; 6、代码区块 四个空格 开头&lt;/p&gt;
+&lt;p&gt; 7、链接 [文字](链接地址)&lt;/p&gt;
+&lt;p&gt; 8、图片 ![图片说明](图片地址) ，图片地址可以是本地路劲，也可以是网络地址&lt;/p&gt;
+&lt;p&gt; 9、强调 **文字** ， __文字__ ， _文字_ ， *文字*&lt;/p&gt;
+&lt;p&gt; 10、代码 &lt;code&gt;`，&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt; 下面来看看例文，你就马上明白，怎么来使用这些符号来写好一篇自己的博文了。&lt;br&gt; 例文&lt;/p&gt;
+&lt;p&gt; 在线编辑器例文： &lt;a href=&quot;https://www.zybuluo.com/mdeditor#298826&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;传送门&lt;/a&gt; &lt;/p&gt;
 </content>
     
     <summary type="html">
