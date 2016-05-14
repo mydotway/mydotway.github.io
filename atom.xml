@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-03-11T06:46:39.007Z</updated>
+  <updated>2016-03-22T14:01:07.357Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Happy For Resloving the Problem</title>
+    <link href="http://yoursite.com/2016/03/22/Happy%20For%20Resloving%20the%20Problem/"/>
+    <id>http://yoursite.com/2016/03/22/Happy For Resloving the Problem/</id>
+    <published>2016-03-22T13:36:27.000Z</published>
+    <updated>2016-03-22T14:01:07.357Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;strong&gt;今天真是超高兴&lt;/strong&gt;这两天一直被一个问题困扰，今天终于解决了(ˇˍˇ)。这两天充分发挥程序猿特别能攻关，特别能吃苦的精神。不吃不喝不睡（夸张了。。。）终于捣鼓了出来。&lt;br&gt;&lt;em&gt;明天争取整理个教程，分享出来供更多的朋友交流和学习。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;To all of the friends&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;happy&lt;/strong&gt;    &lt;/p&gt;
+&lt;p&gt;&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=&quot;330&quot; height=&quot;86&quot; src=&quot;http://music.163.com/outchain/player?type=2&amp;id=28391640&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;&lt;br&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/%5BWin8Mi.CoM%5D68.jpg&quot; alt=&quot;happy&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;今天真是超高兴&lt;/strong&gt;这两天一直被一个问题困扰，今天终于解决了(ˇˍˇ)。这两天充分发挥程序猿特别能攻关，特别能吃苦的精神。不吃不喝不睡（夸张了。。。）终于捣鼓了出来。&lt;br&gt;&lt;em&gt;明天争取整理个教程，分享出来供更多的朋友交流和学习。&lt;/em&gt;&lt;
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="个人" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VS2010发布release版本</title>
+    <link href="http://yoursite.com/2016/03/15/VS2010%E5%8F%91%E5%B8%83release%E7%89%88%E6%9C%AC/"/>
+    <id>http://yoursite.com/2016/03/15/VS2010发布release版本/</id>
+    <published>2016-03-15T08:34:27.000Z</published>
+    <updated>2016-03-22T13:37:55.268Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;打开要打包的工程，选定相应工程&quot;&gt;&lt;a href=&quot;#打开要打包的工程，选定相应工程&quot; class=&quot;headerlink&quot; title=&quot;打开要打包的工程，选定相应工程&quot;&gt;&lt;/a&gt;打开要打包的工程，选定相应工程&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/kp1.png&quot; alt=&quot;选定工程&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;点击生成-gt-配置管理器&quot;&gt;&lt;a href=&quot;#点击生成-gt-配置管理器&quot; class=&quot;headerlink&quot; title=&quot;点击生成-&amp;gt;配置管理器&quot;&gt;&lt;/a&gt;点击生成-&amp;gt;配置管理器&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/kp2.png&quot; alt=&quot;配置管理器&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;选择-Release&quot;&gt;&lt;a href=&quot;#选择-Release&quot; class=&quot;headerlink&quot; title=&quot;选择 Release&quot;&gt;&lt;/a&gt;选择 Release&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/kp3.png&quot; alt=&quot;Release&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;选择-项目-gt-‘工程’属性&quot;&gt;&lt;a href=&quot;#选择-项目-gt-‘工程’属性&quot; class=&quot;headerlink&quot; title=&quot;选择 项目-&amp;gt;‘工程’属性&quot;&gt;&lt;/a&gt;选择 项目-&amp;gt;‘工程’属性&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/kp4.png&quot; alt=&quot;项目属性&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/k5.png&quot; alt=&quot;general&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;设置MFC的使用&quot;&gt;&lt;a href=&quot;#设置MFC的使用&quot; class=&quot;headerlink&quot; title=&quot;设置MFC的使用&quot;&gt;&lt;/a&gt;设置MFC的使用&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/k6.png&quot; alt=&quot;MFCUSE&quot;&gt;&lt;/p&gt;
+&lt;h1 id=&quot;设置字符集&quot;&gt;&lt;a href=&quot;#设置字符集&quot; class=&quot;headerlink&quot; title=&quot;设置字符集&quot;&gt;&lt;/a&gt;设置字符集&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;br&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/k7.png&quot; alt=&quot;Charactor&quot;&gt;&lt;/p&gt;
+&lt;p&gt;点击确定完成设置，然后调试运行项目，在工程文件根目录Release文件夹下生成可执行文件。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;打开要打包的工程，选定相应工程&quot;&gt;&lt;a href=&quot;#打开要打包的工程，选定相应工程&quot; class=&quot;headerlink&quot; title=&quot;打开要打包的工程，选定相应工程&quot;&gt;&lt;/a&gt;打开要打包的工程，选定相应工程&lt;/h1&gt;&lt;p&gt;&lt;em&gt;如下图&lt;/em&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="c++" scheme="http://yoursite.com/categories/c/"/>
+    
+    
+      <category term="VS2010" scheme="http://yoursite.com/tags/VS2010/"/>
+    
+      <category term="release" scheme="http://yoursite.com/tags/release/"/>
+    
+  </entry>
   
   <entry>
     <title>Python学习</title>
@@ -475,7 +538,7 @@
     <link href="http://yoursite.com/2016/03/03/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%9APC%E9%97%B4%E5%90%8C%E6%AD%A5/"/>
     <id>http://yoursite.com/2016/03/03/Hexo博客多PC间同步/</id>
     <published>2016-03-03T06:18:36.000Z</published>
-    <updated>2016-03-11T06:36:59.866Z</updated>
+    <updated>2016-05-14T02:13:50.903Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;本文的说明均是基于win7 64位环境&lt;/em&gt;  &lt;/p&gt;
 &lt;h4 id=&quot;需求&quot;&gt;&lt;a href=&quot;#需求&quot; class=&quot;headerlink&quot; title=&quot;需求&quot;&gt;&lt;/a&gt;需求&lt;/h4&gt;&lt;p&gt;由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的&lt;a href=&quot;http://www.zhihu.com/question/21193762/answer/20811453&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;讨论&lt;/a&gt;，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的&lt;a href=&quot;http://git.oschina.net/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oschina&lt;/a&gt;。&lt;/p&gt;
@@ -503,6 +566,22 @@
 &lt;p&gt;&lt;server&gt;是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端 &lt;/server&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;另外，还需要生成SSH key,可以让你在你的电脑和 Git @ OSC 之间建立安全的加密连接&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;你可以按如下命令来生成sshkey&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh-keygen -t rsa -C &amp;quot;xxxxx@xxxxx.com&amp;quot;# Creates a new ssh key using the provided email
+# Generating public/private rsa key pair...
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;查看你的public key，并把他添加到 Git @ OSC &lt;a href=&quot;http://git.oschina.net/keys&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://git.oschina.net/keys&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cat ~/.ssh/id_rsa.pub
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;添加后，在终端（Terminal）中输入&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ssh -T git@git.oschina.net
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若返回&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Welcome to Git@OSC, yourname!
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;则证明添加成功。&lt;/p&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;p&gt;添加本地文件到仓库并同步到git上&lt;/p&gt;
 &lt;figure class=&quot;highlight tex&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;git add .  &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git commit -m &quot;first commit&quot; &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;添加更新说明&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;git push -u origin master &lt;span class=&quot;special&quot;&gt;#&lt;/span&gt;推送更新到云端服务器&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;blockquote&gt;

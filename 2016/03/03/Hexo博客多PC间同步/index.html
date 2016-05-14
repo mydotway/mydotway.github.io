@@ -80,7 +80,7 @@
 <meta property="og:description" content="本文的说明均是基于win7 64位环境  
 需求由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的讨论，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的oschina。
 配置过程此处仅仅是单个git网站部署，如果是多网站部">
-<meta property="og:updated_time" content="2016-03-11T06:36:59.866Z">
+<meta property="og:updated_time" content="2016-05-14T02:13:50.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客多PC间同步">
 <meta name="twitter:description" content="本文的说明均是基于win7 64位环境  
@@ -543,6 +543,22 @@
 <p><server>是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端 </server></p>
 </blockquote>
 </li>
+</ol>
+<blockquote>
+<p>另外，还需要生成SSH key,可以让你在你的电脑和 Git @ OSC 之间建立安全的加密连接</p>
+</blockquote>
+<p>你可以按如下命令来生成sshkey</p>
+<pre><code>ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;# Creates a new ssh key using the provided email
+# Generating public/private rsa key pair...
+</code></pre><p>查看你的public key，并把他添加到 Git @ OSC <a href="http://git.oschina.net/keys" target="_blank" rel="external">http://git.oschina.net/keys</a></p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....
+</code></pre><p>添加后，在终端（Terminal）中输入</p>
+<pre><code>ssh -T git@git.oschina.net
+</code></pre><p>若返回</p>
+<pre><code>Welcome to Git@OSC, yourname!
+</code></pre><p>则证明添加成功。</p>
+<ol>
 <li><p>添加本地文件到仓库并同步到git上</p>
 <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .  <span class="special">#</span>添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)</span><br><span class="line">git commit -m "first commit" <span class="special">#</span>添加更新说明</span><br><span class="line">git push -u origin master <span class="special">#</span>推送更新到云端服务器</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -669,7 +685,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -677,7 +693,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -686,7 +702,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
