@@ -1,0 +1,997 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="ESB开发,Oracle," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="人生苦旅" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?7d85a59d5f9f993ad2aed0fc04f89eee";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+</script>
+
+
+<meta name="description" content="输入参数：oracle查询结果集返回参数：json字符串或oracle自定义type
+oracle查询结果集转换为json字符串1234567891011121314151617181920212223242526272829303132/*获得查询sql结果集*/ResultSet tmpRS = (ResultSet) row1.rs ; JSONArray array = new JSONA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESB查询结果集转换操作">
+<meta property="og:url" content="http://yoursite.com/2016/05/16/ESB查询结果集转换操作/index.html">
+<meta property="og:site_name" content="人生苦旅">
+<meta property="og:description" content="输入参数：oracle查询结果集返回参数：json字符串或oracle自定义type
+oracle查询结果集转换为json字符串1234567891011121314151617181920212223242526272829303132/*获得查询sql结果集*/ResultSet tmpRS = (ResultSet) row1.rs ; JSONArray array = new JSONA">
+<meta property="og:updated_time" content="2016-05-16T08:26:38.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ESB查询结果集转换操作">
+<meta name="twitter:description" content="输入参数：oracle查询结果集返回参数：json字符串或oracle自定义type
+oracle查询结果集转换为json字符串1234567891011121314151617181920212223242526272829303132/*获得查询sql结果集*/ResultSet tmpRS = (ResultSet) row1.rs ; JSONArray array = new JSONA">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+
+  <title> ESB查询结果集转换操作 | 人生苦旅 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?7d85a59d5f9f993ad2aed0fc04f89eee";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">人生苦旅</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+      
+      
+        <li class="menu-item menu-item-search">
+          <a href="#" class="st-search-show-outputs">
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+	  <!--增加high一下-->
+  
+  <li class="mw-harlem_shake_me im_first  menu-item menu-item-commonweal">
+    <a title="" href='javascript:(function() {
+  function c() {
+    var e = document.createElement("link");
+    e.setAttribute("type", "text/css");
+    e.setAttribute("rel", "stylesheet");
+    e.setAttribute("href", f);
+    e.setAttribute("class", l);
+    document.body.appendChild(e)
+  }
+ 
+  function h() {
+    var e = document.getElementsByClassName(l);
+    for (var t = 0; t < e.length; t++) {
+      document.body.removeChild(e[t])
+    }
+  }
+ 
+  function p() {
+    var e = document.createElement("div");
+    e.setAttribute("class", a);
+    document.body.appendChild(e);
+    setTimeout(function() {
+      document.body.removeChild(e)
+    }, 100)
+  }
+ 
+  function d(e) {
+    return {
+      height : e.offsetHeight,
+      width : e.offsetWidth
+    }
+  }
+ 
+  function v(i) {
+    var s = d(i);
+    return s.height > e && s.height < n && s.width > t && s.width < r
+  }
+ 
+  function m(e) {
+    var t = e;
+    var n = 0;
+    while (!!t) {
+      n += t.offsetTop;
+      t = t.offsetParent
+    }
+    return n
+  }
+ 
+  function g() {
+    var e = document.documentElement;
+    if (!!window.innerWidth) {
+      return window.innerHeight
+    } else if (e && !isNaN(e.clientHeight)) {
+      return e.clientHeight
+    }
+    return 0
+  }
+ 
+  function y() {
+    if (window.pageYOffset) {
+      return window.pageYOffset
+    }
+    return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+  }
+ 
+  function E(e) {
+    var t = m(e);
+    return t >= w && t <= b + w
+  }
+ 
+  function S() {
+    var e = document.createElement("audio");
+    e.setAttribute("class", l);
+    e.src = i;
+    e.loop = false;
+    e.addEventListener("canplay", function() {
+      setTimeout(function() {
+        x(k)
+      }, 500);
+      setTimeout(function() {
+        N();
+        p();
+        
+        for (var e = 0; e < O.length; e++) {
+
+          T(O[e]) 
+        }
+      }, 15500)
+    }, true);
+    e.addEventListener("ended", function() {
+      N();
+      h()
+    }, true);
+    e.innerHTML = " <p>你的浏览器不想让你High起来~.</p> <p>";
+    document.body.appendChild(e);
+    e.play()
+  }
+ 
+  function x(e) {
+    e.className += " " + s + " " + o
+  }
+ 
+  function T(e) {
+    e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+  }
+ 
+  function N() {
+    var e = document.getElementsByClassName(s);
+    var t = new RegExp("\\b" + s + "\\b");
+    for (var n = 0; n < e.length; ) {
+      e[n].className = e[n].className.replace(t, "")
+    }
+  }
+ 
+  var e = 30;
+  var t = 30;
+  var n = 350;
+  var r = 350;
+  
+  var i = "//7xiewb.com1.z0.glb.clouddn.com/imageharlem-shake.mp3";
+  var s = "mw-harlem_shake_me";
+  var o = "im_first";
+  var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+  var a = "mw-strobe_light";
+  
+  var f = "//7xiewb.com1.z0.glb.clouddn.com/imageharlem-shake-style.css";
+  var l = "mw_added_css";
+  var b = g();
+  var w = y();
+  var C = document.getElementsByTagName("*");
+  var k = null;
+  for (var L = 0; L < C.length; L++) {
+    var A = C[L];
+    if (v(A)) {
+      if (E(A)) {
+        k = A;
+        break
+      }
+    }
+  }
+  if (A === null) {
+    console.warn("Could not find a node of the right size. Please try a different page.");
+    return
+  }
+  c();
+  S();
+  var O = [];
+  for (var L = 0; L < C.length; L++) {
+    var A = C[L];
+    if (v(A)) {
+      O.push(A)
+    }
+  }
+  })()    '>High一下</a>
+  </li>
+  
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'oxJMgY9CsY39QJpGBbYz','2.0.0');
+</script>
+
+
+
+    </div>
+  
+</nav>
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                ESB查询结果集转换操作
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-16T10:00:36+08:00" content="2016-05-16">
+              2016-05-16
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/ESB/" itemprop="url" rel="index">
+                    <span itemprop="name">ESB</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/16/ESB查询结果集转换操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/16/ESB查询结果集转换操作/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><em>输入参数：oracle查询结果集</em><br><em>返回参数：json字符串或oracle自定义type</em></p>
+<h2 id="oracle查询结果集转换为json字符串"><a href="#oracle查询结果集转换为json字符串" class="headerlink" title="oracle查询结果集转换为json字符串"></a>oracle查询结果集转换为json字符串</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*获得查询sql结果集*/</span></span><br><span class="line">ResultSet tmpRS = (ResultSet) row1.rs ; </span><br><span class="line">JSONArray array = <span class="keyword">new</span> JSONArray();</span><br><span class="line">JSONObject obj;</span><br><span class="line">JSONArray tmpJSONArray = <span class="keyword">new</span> JSONArray();</span><br><span class="line">JSONObject job = <span class="keyword">null</span> ; </span><br><span class="line"><span class="keyword">while</span>(tmpRS.next())&#123;</span><br><span class="line">     <span class="comment">/*创建JSONObject对象，存储一行数据*/</span></span><br><span class="line">     obj = <span class="keyword">new</span> JSONObject();</span><br><span class="line">     <span class="comment">/*存储主键数据*/</span></span><br><span class="line">     job = <span class="keyword">new</span> JSONObject();</span><br><span class="line">     </span><br><span class="line">     obj.put(<span class="string">"crm_code"</span>, tmpRS.getString(<span class="string">"CUSTOMER_NUMBER"</span>));</span><br><span class="line">     obj.put(<span class="string">"client_name"</span>, tmpRS.getString(<span class="string">"CUSTOMER_NAME"</span>));</span><br><span class="line">     obj.put(<span class="string">"status"</span>, tmpRS.getString(<span class="string">"PROCESS_FLAG"</span>));</span><br><span class="line">     obj.put(<span class="string">"reason"</span>, tmpRS.getString(<span class="string">"ERROR_MESSAGE"</span>));</span><br><span class="line">     job.put(<span class="string">"ATTRIBUTE10"</span>, tmpRS.getString(<span class="string">"ATTRIBUTE10"</span>));</span><br><span class="line">     <span class="comment">/*将行数据对象JSONObject加入到JSONArray对象*/</span>            </span><br><span class="line">     array.add(obj);</span><br><span class="line">     tmpJSONArray.add(job);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*将JSONArray对象转换为json字符串*/</span></span><br><span class="line">String jsonListString = JSON.toJSONString(array,SerializerFeature.WriteMapNullValue);</span><br><span class="line">String jsonString = JSON.toJSONString(tmpJSONArray,SerializerFeature.WriteMapNullValue);</span><br><span class="line">output_row.jsonListString=jsonListString;</span><br><span class="line">output_row.jsonString=jsonString;</span><br><span class="line">tmpRS = <span class="keyword">null</span>;</span><br><span class="line">array = <span class="keyword">null</span>;</span><br><span class="line">obj = <span class="keyword">null</span>;</span><br><span class="line">tmpJSONArray = <span class="keyword">null</span>;</span><br><span class="line">job = <span class="keyword">null</span>;</span><br></pre></td></tr></table></figure>
+<p>需要引用的包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONArray;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONException;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Oracle查询结果集转换为Oracle自定义type"><a href="#Oracle查询结果集转换为Oracle自定义type" class="headerlink" title="Oracle查询结果集转换为Oracle自定义type"></a>Oracle查询结果集转换为Oracle自定义type</h2><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">Connection connection_Java_1 = connection_OracleSP_1;</span><br><span class="line">ARRAY deptArrayObjectp_cux_ap_interface = <span class="keyword">null</span>;</span><br><span class="line">CUX_AP_INTERFACE_PAY_OBJECT mesCustomer = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">JSONArray tmpJSONArrayH = <span class="keyword">new</span> JSONArray();</span><br><span class="line">JSONObject jobH = <span class="keyword">null</span> ; </span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> != row2.rs) &#123;</span><br><span class="line">ResultSet tmpRS = (ResultSet) row2.rs;</span><br><span class="line"><span class="comment">/*创建工具类类型列表*/</span></span><br><span class="line">List&lt;CUX_AP_INTERFACE_PAY_OBJECT&gt; mesCustomers = <span class="keyword">new</span> ArrayList&lt;CUX_AP_INTERFACE_PAY_OBJECT&gt;();</span><br><span class="line"><span class="comment">/*解析查询结果集，将其赋值给相应的工具类对象的属性*/</span></span><br><span class="line"><span class="keyword">while</span>(tmpRS.next())&#123;</span><br><span class="line">        jobH = <span class="keyword">new</span> JSONObject(); </span><br><span class="line">        mesCustomer = <span class="keyword">new</span> CUX_AP_INTERFACE_PAY_OBJECT();</span><br><span class="line">        </span><br><span class="line">        jobH.put(<span class="string">"PROCESS_ID"</span>, tmpRS.getBigDecimal(<span class="string">"PROCESS_ID"</span>));</span><br><span class="line">    </span><br><span class="line">        mesCustomer.setGroup_id(tmpRS.getBigDecimal(<span class="keyword">null</span>));</span><br><span class="line">        mesCustomer.setKEY_ID   (tmpRS.getString(<span class="string">"KEY_ID"</span>));<span class="comment">//JOB_NUMBER </span></span><br><span class="line">        mesCustomer.setRESOURCE_SYS(tmpRS.getString(<span class="string">"SOURCE_FROM"</span>));<span class="comment">//RESOURCE_SYS</span></span><br><span class="line">        mesCustomer.setPAY_ID(tmpRS.getBigDecimal(<span class="string">"CHECK_ID"</span>));</span><br><span class="line">        mesCustomer.setOU_ID(<span class="keyword">null</span>);</span><br><span class="line">        mesCustomer.setOU_NAME(tmpRS.getString(<span class="string">"ORG_NAME"</span>));</span><br><span class="line">        mesCustomer.setPAY_IN_ACC(tmpRS.getString(<span class="string">"PAY_BANK_ACCOUNT"</span>));</span><br><span class="line">        mesCustomer.setPAY_TYPE(tmpRS.getString(<span class="string">"PAYMENT_TYPE"</span>));<span class="comment">//CLASS</span></span><br><span class="line">        mesCustomer.setPAY_SCHDATE(tmpRS.getDate(<span class="string">"CHECK_DATE"</span>));<span class="comment">//STATUS</span></span><br><span class="line">        mesCustomer.setINVOICE_NUMBER(<span class="string">""</span>);</span><br><span class="line">        mesCustomer.setPAY_NUMBER(tmpRS.getString(<span class="string">"CHECK_NUMBER"</span>));<span class="comment">//FROM_DATE</span></span><br><span class="line">      </span><br><span class="line">        mesCustomers.add(mesCustomer);</span><br><span class="line">        tmpJSONArrayH.add(jobH);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*初始化STRUCT类型数组*/</span>        </span><br><span class="line">STRUCT[] mesCustomerLines = <span class="keyword">new</span> STRUCT[mesCustomers.size()];</span><br><span class="line">Object[] obMESCo = <span class="keyword">null</span>;</span><br><span class="line">StructDescriptor sd = <span class="keyword">new</span> StructDescriptor(<span class="string">"CUX_AP_INTERFACE_PAY_OBJECT"</span>,connection_Java_1);</span><br><span class="line"><span class="keyword">if</span> (<span class="keyword">null</span> != mesCustomers &amp;&amp; mesCustomers.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; mesCustomers.size(); i++) &#123;</span><br><span class="line">            mesCustomer = mesCustomers.get(i);</span><br><span class="line">            obMESCo = <span class="keyword">new</span> Object[<span class="number">11</span>];</span><br><span class="line">            obMESCo[<span class="number">0</span>] =mesCustomer.getGroup_id();</span><br><span class="line">            obMESCo[<span class="number">1</span>] =mesCustomer.getKEY_ID();</span><br><span class="line">            obMESCo[<span class="number">2</span>] =mesCustomer.getRESOURCE_SYS();</span><br><span class="line">            obMESCo[<span class="number">3</span>] =mesCustomer.getPAY_ID();</span><br><span class="line">            obMESCo[<span class="number">4</span>] =mesCustomer.getOU_ID();</span><br><span class="line">            obMESCo[<span class="number">5</span>] =mesCustomer.getOU_NAME();</span><br><span class="line">            obMESCo[<span class="number">6</span>] =mesCustomer.getPAY_IN_ACC();</span><br><span class="line">            obMESCo[<span class="number">7</span>] =mesCustomer.getPAY_TYPE();</span><br><span class="line">            obMESCo[<span class="number">8</span>] =mesCustomer.getPAY_SCHDATE();</span><br><span class="line">            obMESCo[<span class="number">9</span>] =mesCustomer.getINVOICE_NUMBER();</span><br><span class="line">            obMESCo[<span class="number">10</span>] =mesCustomer.getPAY_NUMBER();</span><br><span class="line">        </span><br><span class="line">            mesCustomerLines[i] = <span class="keyword">new</span> STRUCT(sd, connection_Java_1, obMESCo);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="comment">/*创建数组描述*/</span></span><br><span class="line">ArrayDescriptor arrayDept = ArrayDescriptor.createDescriptor(<span class="string">"CUX_AP_INTERFACE_PAY_TBL"</span>, connection_Java_1);</span><br><span class="line">deptArrayObjectp_cux_ap_interface = <span class="keyword">new</span> ARRAY(arrayDept, connection_Java_1, mesCustomerLines);</span><br><span class="line">&#125;</span><br><span class="line">             </span><br><span class="line">String jsonString = JSON.toJSONString(tmpJSONArrayH,SerializerFeature.WriteMapNullValue,SerializerFeature.WriteDateUseDateFormat);</span><br><span class="line">output_row.deptArrayObjectp_cux_ap_interface = deptArrayObjectp_cux_ap_interface;</span><br><span class="line"></span><br><span class="line">output_row.jsonString=jsonString;</span><br></pre></td></tr></table></figure>
+<p>需要引用的包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> oracle.sql.STRUCT;</span><br><span class="line"><span class="keyword">import</span> oracle.sql.StructDescriptor;</span><br><span class="line"><span class="keyword">import</span> oracle.jdbc.OracleTypes;</span><br><span class="line"><span class="keyword">import</span> oracle.sql.ARRAY; </span><br><span class="line"><span class="keyword">import</span> oracle.sql.ArrayDescriptor; </span><br><span class="line"><span class="keyword">import</span> oracle.sql.Datum;</span><br><span class="line"><span class="keyword">import</span> oracle.jdbc.OracleConnection;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat; </span><br><span class="line"><span class="keyword">import</span> java.util.Date;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONArray;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br></pre></td></tr></table></figure></p>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">Connection connection_Java_1 = connection_OracleSP_1;</span><br><span class="line">Connection connection_Java_2 = conn_OracleRow_1;</span><br><span class="line">Statement stmt = connection_Java_2.createStatement();</span><br><span class="line">String sql = <span class="string">"select   count(*) as ROWSUM from FRM_MANUFACTURE"</span>;    </span><br><span class="line">ResultSet rsc = stmt.executeQuery(sql); </span><br><span class="line"><span class="keyword">int</span> rowcount=<span class="number">0</span> ;</span><br><span class="line"><span class="keyword">while</span>(rsc.next())&#123;</span><br><span class="line">    rowcount = rsc.getInt(<span class="string">"ROWSUM"</span>);</span><br><span class="line">&#125;</span><br><span class="line">Object[] ob;</span><br><span class="line">STRUCT[] deptArray; </span><br><span class="line">StructDescriptor sd;</span><br><span class="line">ArrayDescriptor arrayDept;</span><br><span class="line">deptArray = <span class="keyword">new</span>  STRUCT[rowcount];</span><br><span class="line">sd = <span class="keyword">new</span>  StructDescriptor(<span class="string">"CUX_EDIT_QMS_ERP_REC"</span>,connection_Java_1);</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(tmpRS.next())&#123;</span><br><span class="line">    ob = <span class="keyword">new</span> Object[<span class="number">18</span>];</span><br><span class="line">    ob[<span class="number">0</span>] = tmpRS.getString(<span class="string">"唯一性标识"</span>); <span class="comment">//tmpid  </span></span><br><span class="line">    ob[<span class="number">1</span>] =  (<span class="keyword">null</span>==tmpRS.getString(<span class="string">"ORG"</span>)||<span class="string">""</span>.equals(tmpRS.getString(<span class="string">"ORG"</span>))?<span class="keyword">null</span>:<span class="keyword">new</span> BigDecimal(tmpRS.getString(<span class="string">"ORG"</span>))); <span class="comment">//organization_id</span></span><br><span class="line">    ob[<span class="number">2</span>] = tmpRS.getString(<span class="string">"DEPARTMENT"</span>); <span class="comment">//production_code</span></span><br><span class="line">    ob[<span class="number">3</span>] = tmpRS.getString(<span class="string">"FNAME7"</span>); <span class="comment">//work_code</span></span><br><span class="line">    ob[<span class="number">4</span>] = tmpRS.getString(<span class="string">"FNAME93"</span>); <span class="comment">//business_typecode</span></span><br><span class="line">    ob[<span class="number">5</span>] = tmpRS.getString(<span class="string">"FNAME9"</span>); <span class="comment">//qms_num</span></span><br><span class="line">    ob[<span class="number">6</span>] = tmpRS.getString(<span class="string">"UN_NUM"</span>); <span class="comment">//scrap_number</span></span><br><span class="line">    ob[<span class="number">7</span>] = tmpRS.getString(<span class="string">"FNAME60"</span>); <span class="comment">//dhh_segment2</span></span><br><span class="line">    ob[<span class="number">8</span>] = tmpRS.getString(<span class="string">"FNAME28"</span>); <span class="comment">//eg_num</span></span><br><span class="line">    ob[<span class="number">9</span>] = tmpRS.getString(<span class="string">"FNAME2"</span>);<span class="comment">//segment1</span></span><br><span class="line">    ob[<span class="number">10</span>] =  (<span class="keyword">null</span>==tmpRS.getString(<span class="string">"FNAME45"</span>)||<span class="string">""</span>.equals(tmpRS.getString(<span class="string">"FNAME45"</span>))?<span class="keyword">null</span>:<span class="keyword">new</span> BigDecimal(tmpRS.getString(<span class="string">"FNAME45"</span>))); <span class="comment">//scrap_quantity</span></span><br><span class="line">    ob[<span class="number">11</span>] = tmpRS.getString(<span class="string">"FNAME91"</span>); <span class="comment">//line_code</span></span><br><span class="line">    ob[<span class="number">12</span>] = tmpRS.getString(<span class="string">"FNAME92"</span>);<span class="comment">//oper_seq_num </span></span><br><span class="line">    ob[<span class="number">13</span>] = tmpRS.getString(<span class="string">"FNAME37"</span>);<span class="comment">//scrap_date</span></span><br><span class="line">    ob[<span class="number">14</span>] = tmpRS.getString(<span class="string">"FNAME8"</span>); <span class="comment">//responsible_party</span></span><br><span class="line">    ob[<span class="number">15</span>] = tmpRS.getString(<span class="string">"FNAME33"</span>); <span class="comment">//vendor_code</span></span><br><span class="line">    ob[<span class="number">16</span>] = tmpRS.getString(<span class="string">"报废原因"</span>); <span class="comment">//scrap_reason</span></span><br><span class="line">    ob[<span class="number">17</span>] = tmpRS.getString(<span class="string">"COMMENTS"</span>);<span class="comment">//remark</span></span><br><span class="line">    deptArray[i] = <span class="keyword">new</span>  STRUCT(sd,connection_Java_1,ob);</span><br><span class="line">    deptArray[i].setAutoBuffering(<span class="keyword">true</span>);</span><br><span class="line">    i++;</span><br><span class="line">&#125;</span><br><span class="line">arrayDept = ArrayDescriptor.createDescriptor(<span class="string">"CUX_EDIT_QMS_ERP_TBL"</span>, connection_Java_1); </span><br><span class="line">ARRAY deptArrayObjectp_qms_erp_tbl = <span class="keyword">new</span> ARRAY(arrayDept, connection_Java_1, deptArray);</span><br><span class="line">row3.deptArrayObjectp_qms_erp_tbl = deptArrayObjectp_qms_erp_tbl;</span><br></pre></td></tr></table></figure>
+<p>需要引用的包<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> oracle.sql.STRUCT;</span><br><span class="line"><span class="keyword">import</span> oracle.sql.StructDescriptor;</span><br><span class="line"><span class="keyword">import</span> oracle.jdbc.OracleTypes;</span><br><span class="line"><span class="keyword">import</span> oracle.sql.ARRAY; </span><br><span class="line"><span class="keyword">import</span> oracle.sql.ArrayDescriptor; </span><br><span class="line"><span class="keyword">import</span> oracle.sql.Datum;</span><br><span class="line"><span class="keyword">import</span> oracle.jdbc.OracleConnection;</span><br><span class="line"><span class="keyword">import</span> java.sql.ResultSet;</span><br><span class="line"><span class="keyword">import</span> java.text.DateFormat; </span><br><span class="line"><span class="keyword">import</span> java.util.Date;  </span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.sql.Statement;</span><br><span class="line"><span class="keyword">import</span> java.sql.Connection;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONArray;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSONObject;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.JSON;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson.serializer.SerializerFeature;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ESB开发/" rel="tag">#ESB开发</a>
+          
+            <a href="/tags/Oracle/" rel="tag">#Oracle</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/14/ESB封装package存储过程开发/" rel="next" title="ESB封装package存储过程开发">
+                <i class="fa fa-chevron-left"></i> ESB封装package存储过程开发
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/16/ESB查询结果集转换操作/"
+           data-title="ESB查询结果集转换操作" data-url="http://yoursite.com/2016/05/16/ESB查询结果集转换操作/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="Jeanson" />
+          <p class="site-author-name" itemprop="name">Jeanson</p>
+          <p class="site-description motion-element" itemprop="description">多思，善问，勤学 专心，专一，专注</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+          
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/mydotway" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> github
+                  
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.cnblogs.com/sjlove/" target="_blank">
+                  
+                    <i class="fa fa-globe"></i> cnblogs
+                  
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+            <p class="site-author-name">友情链接</p>
+            
+              <span class="links-of-author-item">
+                <a href="http://macshuo.com/" target="_blank">MacTalk</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.ruanyifeng.com/" target="_blank">阮一峰</a>
+              </span>
+            
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#oracle查询结果集转换为json字符串"><span class="nav-number">1.</span> <span class="nav-text">oracle查询结果集转换为json字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Oracle查询结果集转换为Oracle自定义type"><span class="nav-number">2.</span> <span class="nav-text">Oracle查询结果集转换为Oracle自定义type</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">2.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">2.2.</span> <span class="nav-text">方法二：</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jeanson</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    | 本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+      </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  
+
+
+  
+
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"funtalk"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+
+</body>
+</html>

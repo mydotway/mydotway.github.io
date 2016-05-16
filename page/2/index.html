@@ -455,6 +455,180 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/03/Hexo博客多PC间同步/" itemprop="url">
+                  Hexo博客多PC间同步
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-03T14:18:36+08:00" content="2016-03-03">
+              2016-03-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/03/Hexo博客多PC间同步/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/03/Hexo博客多PC间同步/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>本文的说明均是基于win7 64位环境</em>  </p>
+<h4 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h4><p>由于Hexo博客文章的编写依赖于hexo环境，如果在不同的PC上边写进行部署的话，要求PC上的hexo环境是一样的。所以必须解决不同PC的hexo环境的同步及编写的文章的同步问题。知乎上有关于这个问题的<a href="http://www.zhihu.com/question/21193762/answer/20811453" target="_blank" rel="external">讨论</a>，最终我选择了利用git托管hexo最新hexo环境。git服务商使用国内的<a href="http://git.oschina.net/" target="_blank" rel="external">oschina</a>。</p>
+<h4 id="配置过程"><a href="#配置过程" class="headerlink" title="配置过程"></a>配置过程</h4><p>此处仅仅是单个git网站部署，如果是多网站部署请参考相关的多网站ssh部署方法。  </p>
+<h5 id="上传blog到git网站"><a href="#上传blog到git网站" class="headerlink" title="上传blog到git网站"></a>上传blog到git网站</h5><p>首先在osc上添加公钥，建立新的respo，此过程类似于上一篇在github上的过程。  </p>
+<ol>
+<li><p>删除文件夹内原有的<code>.git</code>缓存文件夹并编辑<code>.gitignore</code>文件  </p>
+<blockquote>
+<ul>
+<li>Hexoblog文件下所有的<code>.git</code>缓存文件，通常在Hexoblog根目录下，及有些插件或者主题通过git clone下载下来，在文件的根目录下存在，都需要删除，否则会和blog仓库冲突导致文件上传不上去。<br>(<code>.git</code> 默认是隐藏文件，需要开启隐藏文件显示，<strong><code>.git</code>文件被删除后整个文件对应的原有git仓库状态也会被清空</strong>)  </li>
+</ul>
+<hr>
+<ul>
+<li>.gitignore文件作用是声明不被git记录的文件，blog根目录下的.gitignore是hexo初始化带来的，可以先删除或者直接编辑，对hexo不会有影响。建议.gitignore内添加以下内容：<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/.deploy_git</span><br><span class="line">/public</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li>.deploy_git是hexo默认的.git配置文件夹，不需要同步<br>public内文件是根据source文件夹内容自动生成，不需要备份，不然每次改动内容太多</li>
+</ul>
+</li>
+<li><p>初始化仓库<br>blog根目录下执行以下代码：</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &lt;server&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><server>是指在线仓库的地址。origin是本地分支,remote add操作会将本地仓库映射到云端 </server></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>另外，还需要生成SSH key,可以让你在你的电脑和 Git @ OSC 之间建立安全的加密连接</p>
+</blockquote>
+<p>你可以按如下命令来生成sshkey</p>
+<pre><code>ssh-keygen -t rsa -C &quot;xxxxx@xxxxx.com&quot;# Creates a new ssh key using the provided email
+# Generating public/private rsa key pair...
+</code></pre><p>查看你的public key，并把他添加到 Git @ OSC <a href="http://git.oschina.net/keys" target="_blank" rel="external">http://git.oschina.net/keys</a></p>
+<pre><code>cat ~/.ssh/id_rsa.pub
+# ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6eNtGpNGwstc....
+</code></pre><p>添加后，在终端（Terminal）中输入</p>
+<pre><code>ssh -T git@git.oschina.net
+</code></pre><p>若返回</p>
+<pre><code>Welcome to Git@OSC, yourname!
+</code></pre><p>则证明添加成功。</p>
+<ol>
+<li><p>添加本地文件到仓库并同步到git上</p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .  <span class="special">#</span>添加blog目录下所有文件，注意有个`.`（`.gitignore`声明过的文件不包含在内)</span><br><span class="line">git commit -m "first commit" <span class="special">#</span>添加更新说明</span><br><span class="line">git push -u origin master <span class="special">#</span>推送更新到云端服务器</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在执行这步之前一定要注意检查下.gitignore文件的内容，看看是否正确的把一些文件夹忽略掉了。如果加错了的话可以用 </p>
+<figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>撤销操作</p>
+</li>
+</ol>
+<p>至此，已经将hexo文件部署到了在线仓库。  </p>
+<h5 id="将git内容同步到本地"><a href="#将git内容同步到本地" class="headerlink" title="将git内容同步到本地"></a>将git内容同步到本地</h5><p>假设之前将A电脑里的内容备份到git了，现在B电脑准备同步内容。<br>在gitbash中运行以下命令<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin &lt;server&gt; <span class="special">#</span>将本地文件和云端仓库映射起来。这步不可以跳过</span><br><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>fetch是将云端所有内容拉取下来。reset则是不做任何合并处理，强制将本地内容指向刚刚同步下来的云端内容（正常pull的话需要考虑不少冲突的问题，比较麻烦。）  </p>
+</blockquote>
+<h5 id="更新文章后的同步操作"><a href="#更新文章后的同步操作" class="headerlink" title="更新文章后的同步操作"></a>更新文章后的同步操作</h5><p>在B电脑上写完了文章，用hexo d发布完了之后，这时候需要将新文章的md文件及新的配置更新更新到云端。<br>在同一个bash界面下运行以下命令：<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这时候可以用git status查看状态，一般会显示刚刚更改过的文件状态。如：<br>    <figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">On branch master</span><br><span class="line">Changes to be committed:</span><br><span class="line">(use "git reset HEAD &lt;file&gt;..." to unstage)</span><br><span class="line">    modified:   db.json</span><br><span class="line">    new file:   source/_posts/test.md</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<pre><code>上面的输出状态即说明’db.json’文件做了更改，source/_posts目录下新增了’test.md’文件。
+</code></pre><p>然后对更改添加说明并推送到远程仓库.<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m '更新信息'</span><br><span class="line">git push</span><br></pre></td></tr></table></figure></p>
+<p>提示如下，即表示上传同步成功<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To git@git.oschina.net:xxxx/blog-backup.git</span><br><span class="line"> + 2c77e1e...5616bc6 master -&gt; master (forced update)</span><br></pre></td></tr></table></figure></p>
+<p>同步到本地就用<br><figure class="highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git fetch --all</span><br><span class="line">git reset --hard origin/master</span><br></pre></td></tr></table></figure></p>
+<p>如果不是第一次，不需要进行初始化</p>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/02/丑八怪/" itemprop="url">
                   丑八怪
                 </a>
@@ -856,7 +1030,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
