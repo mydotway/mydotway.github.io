@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="个人," />
+  <meta name="keywords" content="ESB开发,Oracle," />
 
 
 
@@ -70,20 +70,52 @@
 </script>
 
 
-<meta name="description" content="终于等到你一直以来(ˇˍˇ) 想～搭建一个属于自己的博客，在这里能够尽情的书写自己的心情，记录工作和生活的点滴，现在这个愿望终于实现了。多谢众大神的帮助，使我能够顺利搭建起此博客，在此谢过所有帮助我的人。在以后的几篇博客中，我也会记录我这次搭建博客的一些心得，希望能够对其他人有所帮助。
-非常荣幸生活在这样一个信息发达的时代。在互联网的海洋中，我们能够获取我们想要的知识，也总有一些乐于奉献的人，在互">
+<meta name="description" content="ESB数据表到表有三种模型，各有各的好处
+数据表到表模型
+字段映射结构
+结果集使用构件解析到数据表模型
+ParseRecordSet设置
+字段映射结构
+结果集转换成json串解析到数据表模型
+json串转换java代码
+ExtractJsonField设置
+字段映射结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="新的开始">
-<meta property="og:url" content="http://yoursite.com/2016/03/01/新的开始/index.html">
+<meta property="og:title" content="ESB数据同步模型">
+<meta property="og:url" content="http://yoursite.com/2016/05/18/ESB数据同步模型/index.html">
 <meta property="og:site_name" content="人生苦旅">
-<meta property="og:description" content="终于等到你一直以来(ˇˍˇ) 想～搭建一个属于自己的博客，在这里能够尽情的书写自己的心情，记录工作和生活的点滴，现在这个愿望终于实现了。多谢众大神的帮助，使我能够顺利搭建起此博客，在此谢过所有帮助我的人。在以后的几篇博客中，我也会记录我这次搭建博客的一些心得，希望能够对其他人有所帮助。
-非常荣幸生活在这样一个信息发达的时代。在互联网的海洋中，我们能够获取我们想要的知识，也总有一些乐于奉献的人，在互">
-<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/p3.jpg">
-<meta property="og:updated_time" content="2016-03-04T00:25:29.684Z">
+<meta property="og:description" content="ESB数据表到表有三种模型，各有各的好处
+数据表到表模型
+字段映射结构
+结果集使用构件解析到数据表模型
+ParseRecordSet设置
+字段映射结构
+结果集转换成json串解析到数据表模型
+json串转换java代码
+ExtractJsonField设置
+字段映射结构">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_SYNC.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_MAP.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_SYNC.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PAESERD.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_MAP.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_SYNC.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_JAVA.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRAJSONFD.jpg">
+<meta property="og:image" content="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_MAP.jpg">
+<meta property="og:updated_time" content="2016-05-18T01:54:00.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="新的开始">
-<meta name="twitter:description" content="终于等到你一直以来(ˇˍˇ) 想～搭建一个属于自己的博客，在这里能够尽情的书写自己的心情，记录工作和生活的点滴，现在这个愿望终于实现了。多谢众大神的帮助，使我能够顺利搭建起此博客，在此谢过所有帮助我的人。在以后的几篇博客中，我也会记录我这次搭建博客的一些心得，希望能够对其他人有所帮助。
-非常荣幸生活在这样一个信息发达的时代。在互联网的海洋中，我们能够获取我们想要的知识，也总有一些乐于奉献的人，在互">
+<meta name="twitter:title" content="ESB数据同步模型">
+<meta name="twitter:description" content="ESB数据表到表有三种模型，各有各的好处
+数据表到表模型
+字段映射结构
+结果集使用构件解析到数据表模型
+ParseRecordSet设置
+字段映射结构
+结果集转换成json串解析到数据表模型
+json串转换java代码
+ExtractJsonField设置
+字段映射结构">
 
 
 
@@ -105,7 +137,7 @@
 
 
 
-  <title> 新的开始 | 人生苦旅 </title>
+  <title> ESB数据同步模型 | 人生苦旅 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -451,7 +483,7 @@
             
             
               
-                新的开始
+                ESB数据同步模型
               
             
           </h1>
@@ -463,8 +495,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-01T16:34:27+08:00" content="2016-03-01">
-              2016-03-01
+            <time itemprop="dateCreated" datetime="2016-05-18T11:18:36+08:00" content="2016-05-18">
+              2016-05-18
             </time>
           </span>
 
@@ -477,8 +509,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/感悟/" itemprop="url" rel="index">
-                    <span itemprop="name">感悟</span>
+                  <a href="/categories/ESB/" itemprop="url" rel="index">
+                    <span itemprop="name">ESB</span>
                   </a>
                 </span>
 
@@ -489,6 +521,15 @@
             </span>
           
 
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/05/18/ESB数据同步模型/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/18/ESB数据同步模型/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -506,9 +547,16 @@
       
 
       
-        <p><strong>终于等到你</strong>一直以来(ˇˍˇ) 想～搭建一个属于自己的博客，在这里能够尽情的书写自己的心情，记录工作和生活的点滴，现在这个愿望终于实现了。多谢众大神的帮助，使我能够顺利搭建起此博客，在此谢过所有帮助我的人。在以后的几篇博客中，我也会记录我这次搭建博客的一些心得，希望能够对其他人有所帮助。</p>
-<p><strong>非常荣幸生活在这样一个信息发达的时代。</strong>在互联网的海洋中，我们能够获取我们想要的知识，也总有一些乐于奉献的人，在互联网上布道传业，开源的精神使得信息交流更加无碍。</p>
-<p><strong>感谢这个时代</strong><br> <center> <iframe name="iframe_canvas" src="http://douban.fm/partner/baidu/doubanradio" scrolling="no" frameborder="0" width="400" height="200"></iframe> </center><br><img src="http://7xrd89.com1.z0.glb.clouddn.com/p3.jpg" alt="坚持"></p>
+        <p><em>ESB数据表到表有三种模型，各有各的好处</em></p>
+<h2 id="数据表到表"><a href="#数据表到表" class="headerlink" title="数据表到表"></a>数据表到表</h2><h3 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_SYNC.jpg" alt="ESB_TABLE_SYNC"></p>
+<h3 id="字段映射结构"><a href="#字段映射结构" class="headerlink" title="字段映射结构"></a>字段映射结构</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_MAP.jpg" alt="ESB_TABLE_MAP"></p>
+<h2 id="结果集使用构件解析到数据表"><a href="#结果集使用构件解析到数据表" class="headerlink" title="结果集使用构件解析到数据表"></a>结果集使用构件解析到数据表</h2><h3 id="模型-1"><a href="#模型-1" class="headerlink" title="模型"></a>模型</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_SYNC.jpg" alt="ESB_PARSERD_SYNC"></p>
+<h3 id="ParseRecordSet设置"><a href="#ParseRecordSet设置" class="headerlink" title="ParseRecordSet设置"></a>ParseRecordSet设置</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PAESERD.jpg" alt="ESB_PAESERD"></p>
+<h3 id="字段映射结构-1"><a href="#字段映射结构-1" class="headerlink" title="字段映射结构"></a>字段映射结构</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_MAP.jpg" alt="ESB_PARSERD_MAP"></p>
+<h2 id="结果集转换成json串解析到数据表"><a href="#结果集转换成json串解析到数据表" class="headerlink" title="结果集转换成json串解析到数据表"></a>结果集转换成json串解析到数据表</h2><h3 id="模型-2"><a href="#模型-2" class="headerlink" title="模型"></a>模型</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_SYNC.jpg" alt="ESB_JSONEXTRA_SYNC"></p>
+<h3 id="json串转换java代码"><a href="#json串转换java代码" class="headerlink" title="json串转换java代码"></a>json串转换java代码</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_JAVA.jpg" alt="ESB_JSONEXTRA_JAVA"></p>
+<h3 id="ExtractJsonField设置"><a href="#ExtractJsonField设置" class="headerlink" title="ExtractJsonField设置"></a>ExtractJsonField设置</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRAJSONFD.jpg" alt="ESB_JSONEXTRAJSONFD"></p>
+<h3 id="字段映射结构-2"><a href="#字段映射结构-2" class="headerlink" title="字段映射结构"></a>字段映射结构</h3><p><img src="http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_MAP.jpg" alt="ESB_JSONEXTRA_MAP"></p>
 
       
     </div>
@@ -517,7 +565,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/个人/" rel="tag">#个人</a>
+            <a href="/tags/ESB开发/" rel="tag">#ESB开发</a>
+          
+            <a href="/tags/Oracle/" rel="tag">#Oracle</a>
           
         </div>
       
@@ -526,13 +576,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/16/ESB查询结果集转换操作/" rel="next" title="ESB查询结果集转换操作">
+                <i class="fa fa-chevron-left"></i> ESB查询结果集转换操作
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/02/Hexo博客搭建全过程记录/" rel="prev" title="Hexo博客搭建全过程记录">
-                Hexo博客搭建全过程记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,6 +606,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/18/ESB数据同步模型/"
+           data-title="ESB数据同步模型" data-url="http://yoursite.com/2016/05/18/ESB数据同步模型/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -682,7 +740,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据表到表"><span class="nav-number">1.</span> <span class="nav-text">数据表到表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型"><span class="nav-number">1.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段映射结构"><span class="nav-number">1.2.</span> <span class="nav-text">字段映射结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果集使用构件解析到数据表"><span class="nav-number">2.</span> <span class="nav-text">结果集使用构件解析到数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型-1"><span class="nav-number">2.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ParseRecordSet设置"><span class="nav-number">2.2.</span> <span class="nav-text">ParseRecordSet设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段映射结构-1"><span class="nav-number">2.3.</span> <span class="nav-text">字段映射结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结果集转换成json串解析到数据表"><span class="nav-number">3.</span> <span class="nav-text">结果集转换成json串解析到数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型-2"><span class="nav-number">3.1.</span> <span class="nav-text">模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#json串转换java代码"><span class="nav-number">3.2.</span> <span class="nav-text">json串转换java代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ExtractJsonField设置"><span class="nav-number">3.3.</span> <span class="nav-text">ExtractJsonField设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字段映射结构-2"><span class="nav-number">3.4.</span> <span class="nav-text">字段映射结构</span></a></li></ol></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

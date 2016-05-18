@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-05-16T08:26:38.692Z</updated>
+  <updated>2016-05-18T01:54:00.551Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ESB数据同步模型</title>
+    <link href="http://yoursite.com/2016/05/18/ESB%E6%95%B0%E6%8D%AE%E5%90%8C%E6%AD%A5%E6%A8%A1%E5%9E%8B/"/>
+    <id>http://yoursite.com/2016/05/18/ESB数据同步模型/</id>
+    <published>2016-05-18T03:18:36.000Z</published>
+    <updated>2016-05-18T01:54:00.551Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;em&gt;ESB数据表到表有三种模型，各有各的好处&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据表到表&quot;&gt;&lt;a href=&quot;#数据表到表&quot; class=&quot;headerlink&quot; title=&quot;数据表到表&quot;&gt;&lt;/a&gt;数据表到表&lt;/h2&gt;&lt;h3 id=&quot;模型&quot;&gt;&lt;a href=&quot;#模型&quot; class=&quot;headerlink&quot; title=&quot;模型&quot;&gt;&lt;/a&gt;模型&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_SYNC.jpg&quot; alt=&quot;ESB_TABLE_SYNC&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;字段映射结构&quot;&gt;&lt;a href=&quot;#字段映射结构&quot; class=&quot;headerlink&quot; title=&quot;字段映射结构&quot;&gt;&lt;/a&gt;字段映射结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_TABLE_MAP.jpg&quot; alt=&quot;ESB_TABLE_MAP&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;结果集使用构件解析到数据表&quot;&gt;&lt;a href=&quot;#结果集使用构件解析到数据表&quot; class=&quot;headerlink&quot; title=&quot;结果集使用构件解析到数据表&quot;&gt;&lt;/a&gt;结果集使用构件解析到数据表&lt;/h2&gt;&lt;h3 id=&quot;模型-1&quot;&gt;&lt;a href=&quot;#模型-1&quot; class=&quot;headerlink&quot; title=&quot;模型&quot;&gt;&lt;/a&gt;模型&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_SYNC.jpg&quot; alt=&quot;ESB_PARSERD_SYNC&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;ParseRecordSet设置&quot;&gt;&lt;a href=&quot;#ParseRecordSet设置&quot; class=&quot;headerlink&quot; title=&quot;ParseRecordSet设置&quot;&gt;&lt;/a&gt;ParseRecordSet设置&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_PAESERD.jpg&quot; alt=&quot;ESB_PAESERD&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;字段映射结构-1&quot;&gt;&lt;a href=&quot;#字段映射结构-1&quot; class=&quot;headerlink&quot; title=&quot;字段映射结构&quot;&gt;&lt;/a&gt;字段映射结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_PARSERD_MAP.jpg&quot; alt=&quot;ESB_PARSERD_MAP&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;结果集转换成json串解析到数据表&quot;&gt;&lt;a href=&quot;#结果集转换成json串解析到数据表&quot; class=&quot;headerlink&quot; title=&quot;结果集转换成json串解析到数据表&quot;&gt;&lt;/a&gt;结果集转换成json串解析到数据表&lt;/h2&gt;&lt;h3 id=&quot;模型-2&quot;&gt;&lt;a href=&quot;#模型-2&quot; class=&quot;headerlink&quot; title=&quot;模型&quot;&gt;&lt;/a&gt;模型&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_SYNC.jpg&quot; alt=&quot;ESB_JSONEXTRA_SYNC&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;json串转换java代码&quot;&gt;&lt;a href=&quot;#json串转换java代码&quot; class=&quot;headerlink&quot; title=&quot;json串转换java代码&quot;&gt;&lt;/a&gt;json串转换java代码&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_JAVA.jpg&quot; alt=&quot;ESB_JSONEXTRA_JAVA&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;ExtractJsonField设置&quot;&gt;&lt;a href=&quot;#ExtractJsonField设置&quot; class=&quot;headerlink&quot; title=&quot;ExtractJsonField设置&quot;&gt;&lt;/a&gt;ExtractJsonField设置&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRAJSONFD.jpg&quot; alt=&quot;ESB_JSONEXTRAJSONFD&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;字段映射结构-2&quot;&gt;&lt;a href=&quot;#字段映射结构-2&quot; class=&quot;headerlink&quot; title=&quot;字段映射结构&quot;&gt;&lt;/a&gt;字段映射结构&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;http://7xrd89.com1.z0.glb.clouddn.com/ESB_JSONEXTRA_MAP.jpg&quot; alt=&quot;ESB_JSONEXTRA_MAP&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;em&gt;ESB数据表到表有三种模型，各有各的好处&lt;/em&gt;&lt;/p&gt;
+&lt;h2 id=&quot;数据表到表&quot;&gt;&lt;a href=&quot;#数据表到表&quot; class=&quot;headerlink&quot; title=&quot;数据表到表&quot;&gt;&lt;/a&gt;数据表到表&lt;/h2&gt;&lt;h3 id=&quot;模型&quot;&gt;&lt;a href=&quot;#模型
+    
+    </summary>
+    
+      <category term="ESB" scheme="http://yoursite.com/categories/ESB/"/>
+    
+    
+      <category term="ESB开发" scheme="http://yoursite.com/tags/ESB%E5%BC%80%E5%8F%91/"/>
+    
+      <category term="Oracle" scheme="http://yoursite.com/tags/Oracle/"/>
+    
+  </entry>
   
   <entry>
     <title>ESB查询结果集转换操作</title>
