@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-14T13:39:01.540Z</updated>
+  <updated>2017-04-22T05:52:28.578Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Fit力</title>
+    <link href="http://yoursite.com/2017/04/22/Fit%E5%8A%9B/"/>
+    <id>http://yoursite.com/2017/04/22/Fit力/</id>
+    <published>2017-04-22T05:50:36.000Z</published>
+    <updated>2017-04-22T05:52:28.578Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Fit力的定义&quot;&gt;&lt;a href=&quot;#Fit力的定义&quot; class=&quot;headerlink&quot; title=&quot;Fit力的定义&quot;&gt;&lt;/a&gt;Fit力的定义&lt;/h3&gt;&lt;p&gt;&lt;em&gt;it’s now the time to fit the mind and body, yearh quiet right, just to be&lt;/em&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Fit力的定义&quot;&gt;&lt;a href=&quot;#Fit力的定义&quot; class=&quot;headerlink&quot; title=&quot;Fit力的定义&quot;&gt;&lt;/a&gt;Fit力的定义&lt;/h3&gt;&lt;p&gt;&lt;em&gt;it’s now the time to fit the mind and body, ye
+    
+    </summary>
+    
+      <category term="感悟" scheme="http://yoursite.com/categories/%E6%84%9F%E6%82%9F/"/>
+    
+    
+      <category term="个人" scheme="http://yoursite.com/tags/%E4%B8%AA%E4%BA%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>2017第一弹</title>
@@ -44,7 +67,7 @@
     <link href="http://yoursite.com/2017/03/14/hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
     <id>http://yoursite.com/2017/03/14/hexo博客的使用/</id>
     <published>2017-03-14T01:18:36.000Z</published>
-    <updated>2017-03-14T14:08:03.584Z</updated>
+    <updated>2017-03-14T14:41:39.097Z</updated>
     
     <content type="html">&lt;p&gt;&lt;em&gt;好久没有使用hexo写博客了，怎么使用都快忘记了，现在再整理整理做个笔记。&lt;/em&gt;&lt;/p&gt;
 &lt;h3 id=&quot;使用github托管hexo的环境，用于日常文章的部署和发布&quot;&gt;&lt;a href=&quot;#使用github托管hexo的环境，用于日常文章的部署和发布&quot; class=&quot;headerlink&quot; title=&quot;使用github托管hexo的环境，用于日常文章的部署和发布&quot;&gt;&lt;/a&gt;使用github托管hexo的环境，用于日常文章的部署和发布&lt;/h3&gt;&lt;p&gt;   此博客是放在github，由github进行托管，因此，在本地写完文章后，首要任务就是推送至github进行发布。具体的代码为：&lt;/p&gt;

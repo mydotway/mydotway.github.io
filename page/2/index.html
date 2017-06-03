@@ -455,6 +455,270 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/05/Markdown语法练习/" itemprop="url">
+                  Markdown语法练习
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-05T09:35:02+08:00" content="2016-03-05">
+              2016-03-05
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/前端/" itemprop="url" rel="index">
+                    <span itemprop="name">前端</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/03/05/Markdown语法练习/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/03/05/Markdown语法练习/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h1><hr>
+<p>星号*与下划线_都可以，单是斜体，双是粗体，符号可跨行，符号可加空格  </p>
+<pre><code>*单星号是斜体*
+</code></pre><p><em>单星号是斜体</em>  </p>
+<pre><code>**双星号是粗体**  
+</code></pre><p><strong>双星号是粗体</strong>  </p>
+<h1 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h1><hr>
+<p>三个或更多_*，必须单独一行，可含空格  </p>
+<pre><code>___
+</code></pre><hr>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><hr>
+<pre><code>翻译成html就是&lt;blockquote&gt;&lt;/blockquote&gt;，符号&gt;后的空格可不要
+&gt;引用
+</code></pre><blockquote>
+<p>引用</p>
+</blockquote>
+<p><em>注意使用空行结束</em>  </p>
+<p><em>内层符号前的空格必须要</em>  </p>
+<pre><code>&gt;引用
+   &gt;&gt;引用中的引用
+</code></pre><blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用中的引用</p>
+</blockquote>
+</blockquote>
+<h1 id="标题"><a href="#标题" class="headerlink" title="标题:"></a>标题:</h1><hr>
+<h2 id="Setext方式"><a href="#Setext方式" class="headerlink" title="Setext方式"></a>Setext方式</h2><p>三个=-或更多  </p>
+<pre><code>大标题
+===
+</code></pre><h1 id="大标题"><a href="#大标题" class="headerlink" title="大标题  "></a>大标题  </h1><pre><code>小标题  
+---
+</code></pre><h2 id="小标题"><a href="#小标题" class="headerlink" title="小标题  "></a>小标题  </h2><h2 id="标题Atx方式"><a href="#标题Atx方式" class="headerlink" title="标题Atx方式"></a>标题Atx方式</h2><p><em>符号#必须加空格</em>  </p>
+<pre><code># 一级标题
+## 二级标题
+### 三级标题
+#### 四级标题
+##### 五级标题
+###### 六级标题
+</code></pre><h1 id="一级标题"><a href="#一级标题" class="headerlink" title="一级标题"></a>一级标题</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h1 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h1><hr>
+<p>符号之后的空格不能少，-+*效果一样，但不能混合使用，因混合是嵌套列表，内容可超长  </p>
+<pre><code>+ 无序列表
++ 无序列表
++ 无序列表
++ 无序列表：我很长。我也很长！那比一比啊？比就比！我有这么长，你有我长吗？我有这么这么长！好吧，你赢了！ 
+</code></pre><ul>
+<li>无序列表</li>
+<li>无序列表</li>
+<li>无序列表</li>
+<li>无序列表：我很长。我也很长！那比一比啊？比就比！我有这么长，你有我长吗？我有这么这么长！好吧，你赢了！  </li>
+</ul>
+<h1 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h1><hr>
+<p>数字不能省略但可无序，点号.之后的空格不能少  </p>
+<pre><code>1. 有序列表
+2. 有序列表
+3. 有序列表
+4. 有序列表
+</code></pre><ol>
+<li>有序列表</li>
+<li>有序列表</li>
+<li>有序列表</li>
+<li>有序列表</li>
+</ol>
+<h1 id="嵌套列表"><a href="#嵌套列表" class="headerlink" title="嵌套列表"></a>嵌套列表</h1><hr>
+<p>+*-可循环使用，但符号之后的空格不能少，次级列表中符号之前的空格也不能少  </p>
+<pre><code>- 嵌套列表
+ + 嵌套列表
+ + 嵌套列表
+  - 嵌套列表
+   * 嵌套列表
+- 嵌套列表
+</code></pre><ul>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
+<li>嵌套列表</li>
+</ul>
+<ul>
+<li>嵌套列表<ul>
+<li>嵌套列表</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>嵌套列表</li>
+</ul>
+<h1 id="文字超链：Inline方式"><a href="#文字超链：Inline方式" class="headerlink" title="文字超链：Inline方式"></a>文字超链：Inline方式</h1><hr>
+<p>Tooltips可省略  </p>
+<pre><code>[hexo.io](http://hexo.io &quot;hexo site&quot;)
+</code></pre><p><a href="http://hexo.io" title="hexo site" target="_blank" rel="external">hexo.io</a>  </p>
+<h1 id="图片链接"><a href="#图片链接" class="headerlink" title="图片链接"></a>图片链接</h1><hr>
+<p>多个感叹号，Tooltips可省略，要设置大小只能借助HTML标记  </p>
+<pre><code>![GitHub Mark](http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png &quot;GitHub Mark&quot;)  
+</code></pre><p><img src="http://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Mark" title="GitHub Mark">  </p>
+<h1 id="索引超链：Reference方式"><a href="#索引超链：Reference方式" class="headerlink" title="索引超链：Reference方式"></a>索引超链：Reference方式</h1><hr>
+<p>索引，1 2可以是任意字符  </p>
+<pre><code>[hexo site][1]
+![GitHub Octocat][2]
+[1]:http://hexo.io
+[2]:http://github.global.ssl.fastly.net/images/modules/logos_page/Octocat.png
+</code></pre><h1 id="自动链接"><a href="#自动链接" class="headerlink" title="自动链接"></a>自动链接</h1><hr>
+<p>尖括号  </p>
+<pre><code>&lt;http://hexo.io&gt;
+&lt;hexo@hexo.io&gt;
+</code></pre><h1 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h1><hr>
+<h2 id="行内代码-使用符号"><a href="#行内代码-使用符号" class="headerlink" title="行内代码 使用符号`"></a>行内代码 使用符号`</h2><pre><code>`val s = &quot;hello Markdown&quot;`
+``val s = &quot;hello Markdown&quot; 需要显示(`)``
+</code></pre><p><code>val s = &quot;hello Markdown&quot;</code><br><code>val s = &quot;hello Markdown&quot; 需要显示(`)</code></p>
+<h2 id="段落代码"><a href="#段落代码" class="headerlink" title="段落代码"></a>段落代码</h2><p>每行文字前加4个空格或者1个Tab，并用空行开始  </p>
+<pre><code>这是一个普通段落：
+   这是一个代码区块。
+   这是一个代码区块。
+</code></pre><p>这是一个普通段落：</p>
+<pre><code>这是一个代码区块。
+这是一个代码区块。
+</code></pre><h2 id="hexo代码"><a href="#hexo代码" class="headerlink" title="hexo代码"></a>hexo代码</h2><p>可指定编程语言，『』代表左右大括号  </p>
+<pre><code>『% codeblock [title] [lang:php] [url] [link text]%』
+ $word = &apos;hello&apos;
+ echo $word;
+『% endcodeblock %』
+
+
+
+[title] [] [url] [link text]
+1  $word = &apos;hello&apos;
+2  echo $word;
+</code></pre><h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><hr>
+<p>用html的注释  </p>
+<pre><code>&lt;!-- 对当前编辑文件(.md)的注释 --&gt;
+</code></pre><h1 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h1><hr>
+<p>Markdown中的转义字符为\，转义的有：  </p>
+<pre><code>\\ 反斜杠
+\` 反引号
+\* 星号
+\_ 下划线
+\{\} 大括号
+\[\] 中括号
+\(\) 小括号
+\# 井号
+\+ 加号
+\- 减号
+\. 英文句号
+\! 感叹号
+</code></pre><h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><hr>
+<p>文本中可直接用html标签，但是要前后加上空行。   </p>
+<pre><code>&lt;input type=&apos;text&apos;&gt;
+</code></pre><p><input type="text"></p>
+<h1 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h1><hr>
+<p>Markdown的扩展语法，hexo不支持   </p>
+<pre><code>|| *Year* || *Temperature (low)* || *Temperature (high)* ||
+|| 1900 || -10 || 25 ||
+|| 1910 || -15 || 30 ||
+|| 1920 || -10 || 32 ||
+</code></pre><h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
+<li><a href="http://notes.stepway.me/2015/09/18/MarkDown%E8%AF%AD%E6%B3%95%E7%BB%83%E4%B9%A0/" target="_blank" rel="external">MarkDown语法练习</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-tags " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/04/Teamviewer无法捕捉画面/" itemprop="url">
                   Teamviewer无法捕捉画面
                 </a>
@@ -1547,7 +1811,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">18</span>
+              <span class="site-state-item-count">19</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
